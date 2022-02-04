@@ -6,6 +6,7 @@ const AllMovies = (props) => {
   const movieCards = props.movies.map(movie => {
     return(
       <Card
+        key= {movie.id}
         id= {movie.id}
         poster_path= {movie.poster_path}
         backdrop_path= {movie.backdrop_path}
@@ -15,6 +16,7 @@ const AllMovies = (props) => {
       />
     )
   })
+
   return(
     <section className="movie-container">
       {movieCards}
