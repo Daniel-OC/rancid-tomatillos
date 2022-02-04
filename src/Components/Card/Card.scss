@@ -4,7 +4,7 @@
 .movie-wrapper {
   display: grid;
   grid-template-columns: 20% 80%;
-  grid-auto-rows: minmax(100px, auto);
+  // grid-auto-rows: minmax(100px, auto);
   background-color: v.$jeanBlue;
   margin: 0% 10%;
 }
