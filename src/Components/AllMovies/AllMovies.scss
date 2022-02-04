@@ -3,4 +3,15 @@
 
 .movie-container {
   background-color: v.$darkBlue;
+  padding: 10% 0;
+}
+
+.movie-container > .movie-wrapper:nth-child(even) {
+  background-color: v.$lightBrown;
+  direction: rtl;
+}
+
+.movie-container > .movie-wrapper:nth-child(even) > .description-container {
+  background-color: v.$lightBrown;
+  direction: ltr;
 }
