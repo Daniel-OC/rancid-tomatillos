@@ -5,6 +5,10 @@ import movieTestData from './movieTestData';
 class App extends React.Component {
   constructor() {
     super();
+
+    render() {
+      
+    }
   }
 }
 
