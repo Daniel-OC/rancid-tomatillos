@@ -1,8 +1,12 @@
+@use './reset.scss';
 @use './variables' as v;
 @use './mixins' as m;
-@use './reset.scss';
 
 
 * {
   color: v.$offWhite
+}
+
+p {
+  padding: 0.5em 0;
 }

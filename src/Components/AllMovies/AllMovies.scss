@@ -3,4 +3,9 @@
 
 .movie-container {
   background-color: v.$darkBlue;
+  padding: 1%;
+}
+
+.movie-container > .movie-wrapper:nth-child(even) > .description-container {
+  background-color: v.$lightBrown;
 }
