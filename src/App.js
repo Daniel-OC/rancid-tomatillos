@@ -2,6 +2,7 @@ import React from "react";
 import './styles/App.scss';
 import movieTestData from './movieTestData';
 import Header from './Components/Header/Header'
+import AllMovies from "./Components/AllMovies/AllMovies";
 
 class App extends React.Component {
   constructor() {
@@ -15,7 +16,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <Header />
+      <main>
+        <Header />
+        <AllMovies movies={this.state.movies}/>
+      </main>
+      
     )
   }
 }
