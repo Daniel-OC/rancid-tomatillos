@@ -1,4 +1,5 @@
 import React from "react";
+import {Modal, useModal} from 'react-top-modal';
 import './styles/App.scss';
 import movieTestData from './movieTestData';
 import Header from './Components/Header/Header'
@@ -14,11 +15,18 @@ class App extends React.Component {
     }
   }
 
+  selectMovie = (id) => {
+    console.log(id);
+    const foundMovie = this.state.movies.find(movie => movie.id === id);
+    
+    this.setState({ currentMovie: foundMovie });
+  }
+
   render() {
     return (
       <main>
         <Header />
-        <AllMovies movies={this.state.movies}/>
+        <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />
       </main>
       
     )
