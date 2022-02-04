@@ -1,0 +1,20 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.movie-wrapper {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  background-color: v.$jeanBlue;
+}
+
+.thumbnail {
+  width: 20%;
+}
+
+h4 {
+  color: v.$offWhite;
+}
+
+p {
+  color: v.$offWhite;
+}

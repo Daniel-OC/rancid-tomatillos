@@ -1,0 +1,8 @@
+@use './variables' as v;
+@use './mixins' as m;
+@use './reset.scss';
+
+
+* {
+  color: v.$offWhite
+}

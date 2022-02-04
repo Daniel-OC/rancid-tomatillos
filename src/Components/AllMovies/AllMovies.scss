@@ -1,0 +1,6 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+.movie-container {
+  background-color: v.$darkBlue;
+}
