@@ -1,0 +1,9 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+header {
+  background-color: v.$jeanBlue;
+  padding: 2%;
+  font-size: 3em;
+  // color: v.$offwhite
+}
