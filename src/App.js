@@ -4,6 +4,7 @@ import './styles/App.scss';
 import movieTestData from './movieTestData';
 import Header from './Components/Header/Header'
 import AllMovies from "./Components/AllMovies/AllMovies";
+import SingleMovie from "./Components/SingleMovie/SingleMovie";
 
 class App extends React.Component {
   constructor() {
@@ -16,7 +17,7 @@ class App extends React.Component {
   }
 
   selectMovie = (id) => {
-    console.log(id);
+    // console.log(id);
     const foundMovie = this.state.movies.find(movie => movie.id === id);
     
     this.setState({ currentMovie: foundMovie });
@@ -24,8 +25,10 @@ class App extends React.Component {
 
   render() {
     return (
+      // console.log(SingleMovie)
       <main>
         <Header />
+        {this.state.currentMovie && <SingleMovie />}
         <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />
       </main>
       

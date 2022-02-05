@@ -1,19 +1,19 @@
 import React from 'react';
-import Modal, { useModal } from 'react-top-modal';
+// import Modal, { useModal } from 'react-top-modal';
 
-// const SingleMovie = () => {
-//   const { showModal, activeModal, handleOpenModal, handleCloseModal } = useModal();
-
-//   return (
-//       <>
-//           <button type='button' className='buttonDefault' onClick={() => handleOpenModal('classic')}>
-//               Modal (classic Modal)
-//           </button>
-//           <Modal isOpen={ showModal && activeModal === 'classic' } close={handleCloseModal}>
-//               <h2>classic</h2>
-//           </Modal>
-//       </>
-//   );
-// };
+const SingleMovie = (props) => {
+  return (
+    <div className='modal'>
+      <div className='modal-content'>
+        <div className='modal-header'>
+          <h4 className='modal-title'>Modal Title</h4>
+        </div>
+        <div className='modal-body'>
+          <button className='button'>Close</button>
+        </div>
+      </div>
+    </div>
+  )
+};
 
 export default SingleMovie;
