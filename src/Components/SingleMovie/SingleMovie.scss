@@ -1,34 +1,49 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
 .modal {
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, .8);
+  background-color: v.$transparentBlue;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.modal-content {
-  width: 500px;
-  background-color: rgba(255, 255, 255);
-}
-
-.modal-header, .modal-footer {
-  padding: 10px;
-}
-
-.modal-title {
-  margin: 0;
-}
-
-.modal-body {
-  padding: 10px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  // padding: 20%;
+  border-radius: 0;
+  max-width: 60.25rem;
+  max-height: fit-content;
 }
 
 .close-button {
   background-color: #000;
+}
+
+.modal-wrapper {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.thumbnail {
+  width: 100%;
+}
+
+.description-container {
+  background-color: v.$medBrown;
+  padding: 5%;
+}
+
+.banner {
+  width: 100%;
+}
+
+h4 {
+  color: v.$darkBlue;
+  font-size: 1.5em;
+}
+
+p {
+  color: v.$jeanBlue;
 }

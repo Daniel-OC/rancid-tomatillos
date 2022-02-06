@@ -8,17 +8,26 @@ const SingleMovie = (props) => {
   //   return null;
   // }
 
+  React.useEffect(() => {
+    document.body.addEventListener('keydown', props.closeOnEscapeKey)
+    return function cleanup() {
+      document.body.removeEventListener('keydown', props.closeOnEscapeKey)
+    }
+  }, [])
+
   return (
     <div className='modal'>
-      <div className='modal-content'>
-        <div className='modal-header'>
-          <h4 className='modal-title'>Modal Title</h4>
+      <article className='modal-wrapper'>
+        <img className='banner' src={props.currentMovie.backdrop_path}/>
+        <div className='description-container'>
+          <h4>{props.currentMovie.title}</h4>
+          <p>Average Rating: {(props.currentMovie.average_rating/2).toFixed(1)}</p>
+          <button className='close-button' onClick ={ () => props.closeSelectMovie()}>Close</button>
         </div>
-        <div className='modal-body'>
-          <button className='close-button' onClick={ () => props.closeSelectMovie()}>Close</button>
-        </div>
-      </div>
+      </article>
     </div>
+
+    
   )
 };
 

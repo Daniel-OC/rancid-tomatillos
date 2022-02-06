@@ -27,14 +27,21 @@ class App extends React.Component {
     this.setState({ currentMovie: null });
   }
 
+  closeOnEscapeKey = (event) => {
+    if((event.charCode || event.keyCode) === 27) {
+      this.closeSelectMovie()
+    }
+  }
+
   render() {
     // const [show, setShow] = React.useState(false);
     return (
       // console.log(SingleMovie)
       <main>
         <Header />
-        {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} />}
+        {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />}
         <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />
+        {/* {!this.state.currentMovie && <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />} */}
       </main>
       
     )
