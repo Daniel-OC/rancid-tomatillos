@@ -19,14 +19,12 @@ const AllMovies = (props) => {
     )
   })
 
+
   return(
     <section className="movie-container">
       {movieCards}
     </section>
-  )
-  
+  ) 
 }
-
-
 
 export default AllMovies;

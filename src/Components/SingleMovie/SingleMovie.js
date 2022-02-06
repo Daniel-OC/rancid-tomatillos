@@ -8,12 +8,26 @@ const SingleMovie = (props) => {
   //   return null;
   // }
 
+  const showBlur = () => {
+    document.querySelector('.movie-container').classList.add('blur')
+    document.querySelector('body').classList.add('blur')
+  }
+
+  const removeBlur = () => {
+    document.querySelector('.movie-container').classList.remove('blur')
+    document.querySelector('body').classList.remove('blur')
+  }
+
   React.useEffect(() => {
     document.body.addEventListener('keydown', props.closeOnEscapeKey)
+    showBlur()
     return function cleanup() {
+      removeBlur()
       document.body.removeEventListener('keydown', props.closeOnEscapeKey)
     }
   }, [])
+
+
 
   return (
     <div className='modal'>

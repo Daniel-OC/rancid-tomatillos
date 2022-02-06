@@ -2,13 +2,29 @@
 @use './variables' as v;
 @use './mixins' as m;
 
-
 * {
-  color: v.$offWhite
+  color: v.$offWhite;
+}
+
+html {
+  background-color: v.$darkBlue;
 }
 
 p {
   padding: 0.5em 0;
+}
+
+body.blur {
+  overflow-y: hidden;
+}
+
+.error {
+  text-align: center;
+  padding: 10%;
+}
+
+.error-message {
+  font-size: 1.5em;
 }
 
 ::-webkit-scrollbar {background: transparent; width: 0};

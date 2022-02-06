@@ -4,6 +4,7 @@
 .movie-container {
   background-color: v.$darkBlue;
   padding: 10% 0;
+  overflow-y: auto;
 }
 
 .movie-container > .movie-wrapper:nth-child(even) {
@@ -15,3 +16,9 @@
   background-color: v.$lightBrown;
   direction: ltr;
 }
+
+.movie-container.blur {
+ filter: blur(10px);
+
+}
+
