@@ -11,14 +11,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  // padding: 20%;
   border-radius: 0;
   max-width: 60.25rem;
   max-height: fit-content;
 }
 
 .close-button {
-  background-color: #000;
+  background-color: transparent; 
+  border: none;
+  color: v.$offWhite;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  margin: 1em;
+
+  &:hover {
+    transform: scale(1.5);
+  }
 }
 
 .modal-wrapper {

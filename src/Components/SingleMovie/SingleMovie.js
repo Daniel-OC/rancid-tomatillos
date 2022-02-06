@@ -18,11 +18,12 @@ const SingleMovie = (props) => {
   return (
     <div className='modal'>
       <article className='modal-wrapper'>
+        <button className='close-button' onClick = {() => props.closeSelectMovie()}>X</button>
         <img className='banner' src={props.currentMovie.backdrop_path}/>
         <div className='description-container'>
           <h4>{props.currentMovie.title}</h4>
+          <p>Release Date: {(props.currentMovie.release_date)}</p>
           <p>Average Rating: {(props.currentMovie.average_rating/2).toFixed(1)}</p>
-          <button className='close-button' onClick ={ () => props.closeSelectMovie()}>Close</button>
         </div>
       </article>
     </div>
