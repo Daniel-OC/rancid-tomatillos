@@ -1,19 +1,25 @@
 import React from "react";
 import {Modal, useModal} from 'react-top-modal';
 import './styles/App.scss';
+import './apiCalls'
 import movieTestData from './movieTestData';
 import Header from './Components/Header/Header'
 import AllMovies from "./Components/AllMovies/AllMovies";
 import SingleMovie from "./Components/SingleMovie/SingleMovie";
+import { getAllMovies } from "./apiCalls";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: movieTestData.movies,
+      movies: [],
       currentMovie: null,
       error: ''
     }
+  }
+
+  componentDidMount() {
+    getAllMovies().then(data =>  this.setState({movies: data.movies}))
   }
 
   selectMovie = (id) => {
