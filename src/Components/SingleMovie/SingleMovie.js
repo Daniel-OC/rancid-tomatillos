@@ -10,10 +10,12 @@ const SingleMovie = (props) => {
 
   const showBlur = () => {
     document.querySelector('.movie-container').classList.add('blur')
+    document.querySelector('body').classList.add('blur')
   }
 
   const removeBlur = () => {
     document.querySelector('.movie-container').classList.remove('blur')
+    document.querySelector('body').classList.remove('blur')
   }
 
   React.useEffect(() => {

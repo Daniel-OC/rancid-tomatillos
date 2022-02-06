@@ -2,13 +2,16 @@
 @use './variables' as v;
 @use './mixins' as m;
 
-
 * {
   color: v.$offWhite
 }
 
 p {
   padding: 0.5em 0;
+}
+
+body.blur {
+  overflow-y: hidden;
 }
 
 ::-webkit-scrollbar {background: transparent; width: 0};
