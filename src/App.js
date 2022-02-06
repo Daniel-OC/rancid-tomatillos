@@ -6,7 +6,7 @@ import movieTestData from './movieTestData';
 import Header from './Components/Header/Header'
 import AllMovies from "./Components/AllMovies/AllMovies";
 import SingleMovie from "./Components/SingleMovie/SingleMovie";
-import { getAllMovies } from "./apiCalls";
+import { getAllMovies, getSingleMovie } from "./apiCalls";
 
 class App extends React.Component {
   constructor() {
@@ -24,8 +24,7 @@ class App extends React.Component {
 
   selectMovie = (id) => {
     console.log(id);
-    const foundMovie = this.state.movies.find(movie => movie.id === id);
-    this.setState({ currentMovie: foundMovie });
+    const foundMovie = getSingleMovie(id).then(data => this.setState({currentMovie: data.movie}))
   }
 
   closeSelectMovie = () => {
