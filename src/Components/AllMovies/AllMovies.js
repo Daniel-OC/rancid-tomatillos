@@ -19,6 +19,7 @@ const AllMovies = (props) => {
     )
   })
 
+
   return(
     <section className="movie-container">
       {movieCards}

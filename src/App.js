@@ -19,7 +19,6 @@ class App extends React.Component {
   selectMovie = (id) => {
     console.log(id);
     const foundMovie = this.state.movies.find(movie => movie.id === id);
-    
     this.setState({ currentMovie: foundMovie });
   }
 
