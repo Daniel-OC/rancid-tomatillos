@@ -1,11 +1,19 @@
+const checkForError = (response) => {
+  if (!response.ok) {
+    throw new Error('Oops! Something went wrong! Please refresh your page and clear your cache. If that doesn\t work please try again later!');
+  } else {
+    return response.json();
+  }
+}
+
 const getSingleMovie = (id) => {
   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-  .then(response => response.json())
+  .then(response => checkForError(response))
 }
 
 const getAllMovies = () => {
   return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies`)
-  .then(response => response.json())
+  .then(response => checkForError(response))
 }
 
 export {getSingleMovie, getAllMovies}
