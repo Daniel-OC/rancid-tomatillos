@@ -4,14 +4,9 @@
 .movie-wrapper {
   display: grid;
   grid-template-columns: 20% 80%;
-  // grid-auto-rows: minmax(100px, auto);
   background-color: v.$jeanBlue;
   margin: 0% 10%;
 }
-
-// .movie-wrapper > .description-container:nth-child(odd){
-//   background-color: blue;
-// }
 
 .thumbnail {
   width: 100%;
@@ -21,10 +16,6 @@
   background-color: v.$medBrown;
   padding: 5%;
 }
-
-// .description-container > div:nth-child(odd){
-//   background: blue;
-// }
 
 h4 {
   color: v.$darkBlue;
