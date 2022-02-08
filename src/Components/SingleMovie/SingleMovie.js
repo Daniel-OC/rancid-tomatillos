@@ -14,9 +14,9 @@ const SingleMovie = (props) => {
   
   const overview = props.currentMovie.overview === "" ? 'No overview available.' : props.currentMovie.overview;
 
-  let dateProvided = props.currentMovie.release_date.split('-')
+  let dateProvided = props.currentMovie.release_date.split('-');
   let [year, month, day] = dateProvided;
-  const releaseDate = [month, day, year].join('/')
+  const releaseDate = [month, day, year].join('/');
 
   const budgetProvided = props.currentMovie.budget;
   let budgetDollars = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(budgetProvided);
