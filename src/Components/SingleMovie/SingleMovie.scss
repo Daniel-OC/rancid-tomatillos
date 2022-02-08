@@ -15,7 +15,9 @@
   max-height: fit-content;
   padding: 0;
   color: v.$offWhite;
-  // background: linear-gradient(to top,#181818,transparent 50%);
+  background: linear-gradient(to top,#181818,transparent 50%);
+  box-shadow: 1px 1px 4px 4px rgb(2 2 2 / 64%);
+  border-radius: 6px;
   overflow-y: auto;
 }
 

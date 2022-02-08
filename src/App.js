@@ -51,7 +51,6 @@ class App extends React.Component {
         {this.state.err && <section className="error"><h2 className="error-message">{this.state.err}</h2></section>}
         {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />}
         <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />
-        {/* {!this.state.currentMovie && <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />} */}
       </main>
       
     )
