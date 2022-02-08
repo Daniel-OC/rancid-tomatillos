@@ -37,7 +37,7 @@ class App extends React.Component {
   }
 
   closeOnEscapeKey = (event) => {
-    if((event.charCode || event.keyCode) === 27) {
+    if ((event.charCode || event.keyCode) === 27) {
       this.closeSelectMovie()
     }
   }

@@ -61,8 +61,7 @@ const SingleMovie = (props) => {
             <p className="tagline">{props.currentMovie.tagline}</p>
             <div className='rating-container'>
               <ReactStars className='star-rating' count={5} value={props.currentMovie.average_rating/2} size={16} color2={'#ffd700'} color1={'#F2F2F2'} edit={false}/>
-              <span className="rating">{(props.currentMovie.average_rating/2).toFixed(1)}
-              </span>
+              <span className="rating">{(props.currentMovie.average_rating/2).toFixed(1)}</span>
             </div>
           </div>
         </section>
@@ -75,7 +74,7 @@ const SingleMovie = (props) => {
             <p className="modal-title">Release Date: <span className="modal-text">{releaseDate}</span></p>
             <p className="modal-title">Budget: <span className="modal-text">{budget}</span></p>
             <p className="modal-title">Revenue: <span className="modal-text">{revenue}</span></p>
-            <p className="modal-title">Run Time: <span className="modal-text">{runtime}</span></p>
+            <p className="modal-title">Runtime: <span className="modal-text">{runtime}</span></p>
           </div>
         </section>
       </article>

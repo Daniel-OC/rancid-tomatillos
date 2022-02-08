@@ -15,10 +15,11 @@
   max-height: fit-content;
   padding: 0;
   color: v.$offWhite;
-  background: linear-gradient(to top,#181818,transparent 50%);
+  // background: linear-gradient(to top, v.$darkBlue, transparent 50%);
   box-shadow: 1px 1px 4px 4px rgb(2 2 2 / 64%);
   border-radius: 6px;
   overflow-y: auto;
+  background: transparent;
 }
 
 .close-button {
@@ -46,7 +47,8 @@
   min-height: 60vh;
   max-width: calc(100vw - 2rem);
   max-height: calc(100vh - 2rem);
-  background-color: v.$darkBlue;
+  // background-color: v.$darkBlue;
+  background: linear-gradient(to top,#181818,transparent 50%);
 }
 
 .thumbnail {
@@ -54,7 +56,7 @@
 }
 
 .modal-top {
-  background: linear-gradient(to top,#020202,transparent 50%)
+  background: linear-gradient(1deg, v.$darkBlue, transparent 90%);
 }
 
 .modal-bottom {
@@ -66,12 +68,13 @@
 
 .movie-info {
   background: linear-gradient(1deg, v.$darkBlue, transparent 90%);
-  position: absolute;
-  bottom: 20%;
+  // position: absolute;
+  position: static;
+  bottom: 0;
   right: 0;
   left: 0;
   z-index: 2;
-  padding: 2%;
+  padding: 2% 2% 0 2%;
 }
 
 .banner {
@@ -93,9 +96,18 @@
   font-size: 1.5em;
 }
 
+.rating-container {
+  display: flex;
+}
+
+.rating {
+  padding: 0 0.5em;
+}
+
 .tagline {
   font-style: italic;
   color: v.$offWhite;
+  line-height: 1.2em;
 }
 
 .modal-text {
@@ -113,4 +125,5 @@
   margin: 0 2%;
   justify-content: space-between;
   flex: 1;
+  font-size: 90%;
 }

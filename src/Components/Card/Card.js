@@ -16,6 +16,7 @@ const Card = (props) => {
           <ReactStars className='star-rating' count={5} value={averageRating} size={16} color2={'#ffd700'} color1={'#0D0D0D'} edit={false} />
           <p>{props.average_rating}</p>
         </div>
+        <button className='info-button'>More Info</button>
       </div>
     </article>
   )
