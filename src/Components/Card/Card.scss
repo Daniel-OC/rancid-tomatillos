@@ -17,6 +17,15 @@
   padding: 5%;
 }
 
+.rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.star-rating {
+  margin: 0 1% 0 0;
+}
+
 h4 {
   color: v.$darkBlue;
   font-size: 1.5em;
