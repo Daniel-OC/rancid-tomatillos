@@ -6,7 +6,7 @@ const Card = (props) => {
   // console.log(props)
   return (
     <article className='movie-wrapper' onClick ={ () => props.selectMovie(props.id) }>
-      <img className='thumbnail' src={props.poster_path}/>
+      <img className='thumbnail' src={props.poster_path} alt={`"${props.title}" poster`}/>
       <div className='description-container'>
         <h4>{props.title}</h4>
         <p>Average Rating: {props.average_rating}</p>
