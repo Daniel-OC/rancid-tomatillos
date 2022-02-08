@@ -33,7 +33,7 @@ const SingleMovie = (props) => {
     <div className='modal'>
       <article className='modal-wrapper'>
         <button className='close-button' onClick = {() => props.closeSelectMovie()}>X</button>
-        <img className='banner' src={props.currentMovie.backdrop_path}/>
+        <img className='banner' src={props.currentMovie.backdrop_path} alt={`Scene from "${props.currentMovie.title}"`}/>
         <div className='movie-details'>
           <h4 className="movie-title">{props.currentMovie.title}</h4>
           <p className="tagline">{props.currentMovie.tagline}</p>
