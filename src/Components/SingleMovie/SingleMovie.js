@@ -34,10 +34,17 @@ const SingleMovie = (props) => {
       <article className='modal-wrapper'>
         <button className='close-button' onClick = {() => props.closeSelectMovie()}>X</button>
         <img className='banner' src={props.currentMovie.backdrop_path}/>
-        <div className='description-container'>
-          <h4>{props.currentMovie.title}</h4>
-          <p>Release Date: {(props.currentMovie.release_date)}</p>
-          <p>Average Rating: {(props.currentMovie.average_rating/2).toFixed(1)}</p>
+        <div className='movie-details'>
+          <h4 className="movie-title">{props.currentMovie.title}</h4>
+          <p className="tagline">{props.currentMovie.tagline}</p>
+          <p className="modal-text">{props.currentMovie.overview}</p>
+            <p className="modal-title">Average Rating: <span className="modal-text">{(props.currentMovie.average_rating/2).toFixed(1)}</span></p>
+          <div className="movie-specs">
+            <p className="modal-title">Release Date: <span className="modal-text">{(props.currentMovie.release_date)}</span></p>
+            <p className="modal-title">Run Time: <span className="modal-text">{props.currentMovie.runtime}</span></p>
+            <p className="modal-title">Budget: <span className="modal-text">{props.currentMovie.budget}</span></p>
+            <p className="modal-title">Revenue: <span className="modal-text">{props.currentMovie.revenue}</span></p>
+          </div>
         </div>
       </article>
     </div>

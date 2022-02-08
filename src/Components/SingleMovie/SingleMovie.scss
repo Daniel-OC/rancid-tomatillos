@@ -35,14 +35,15 @@
 .modal-wrapper {
   max-height: 80vh;
   overflow-y: auto;
+  background: linear-gradient(to top,#181818,transparent 50%)
 }
 
 .thumbnail {
   width: 100%;
 }
 
-.description-container {
-  background-color: v.$medBrown;
+.movie-details {
+  background-color: #181818;
   padding: 5%;
 }
 
@@ -50,11 +51,29 @@
   width: 100%;
 }
 
-h4 {
-  color: v.$darkBlue;
+.movie-title {
+  color: v.$offWhite;
   font-size: 1.5em;
 }
 
 p {
   color: v.$jeanBlue;
+}
+
+.tagline {
+  font-style: italic;
+  color: v.$offWhite;
+}
+
+.modal-text {
+  color: v.$offWhite;
+}
+
+.modal-title {
+  color: #777;
+}
+
+.movie-specs {
+  display: flex;
+  justify-content: space-between;
 }
