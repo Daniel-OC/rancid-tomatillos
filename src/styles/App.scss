@@ -4,6 +4,7 @@
 
 * {
   color: v.$offWhite;
+  font-family: v.$bodyFont;
 }
 
 html {
@@ -25,6 +26,10 @@ body.blur {
 
 .error-message {
   font-size: 1.5em;
+}
+
+.hidden {
+  display: none;
 }
 
 ::-webkit-scrollbar {background: transparent; width: 0};

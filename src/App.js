@@ -2,8 +2,9 @@ import React from "react";
 import {Modal, useModal} from 'react-top-modal';
 import './styles/App.scss';
 import './apiCalls'
-import movieTestData from './movieTestData';
+// import movieTestData from './movieTestData';
 import Header from './Components/Header/Header'
+import Footer from './Components/Footer/Footer'
 import AllMovies from "./Components/AllMovies/AllMovies";
 import SingleMovie from "./Components/SingleMovie/SingleMovie";
 import { getAllMovies, getSingleMovie } from "./apiCalls";
@@ -37,7 +38,7 @@ class App extends React.Component {
   }
 
   closeOnEscapeKey = (event) => {
-    if((event.charCode || event.keyCode) === 27) {
+    if ((event.charCode || event.keyCode) === 27) {
       this.closeSelectMovie()
     }
   }
@@ -51,7 +52,7 @@ class App extends React.Component {
         {this.state.err && <section className="error"><h2 className="error-message">{this.state.err}</h2></section>}
         {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />}
         <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />
-        {/* {!this.state.currentMovie && <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />} */}
+        <Footer />
       </main>
       
     )
