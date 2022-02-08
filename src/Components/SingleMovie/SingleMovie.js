@@ -32,20 +32,22 @@ const SingleMovie = (props) => {
   return (
     <div className='modal'>
       <article className='modal-wrapper'>
-        <button className='close-button' onClick = {() => props.closeSelectMovie()}>X</button>
-        <img className='banner' src={props.currentMovie.backdrop_path} alt={`Scene from "${props.currentMovie.title}"`}/>
-        <div className='movie-details'>
-          <h4 className="movie-title">{props.currentMovie.title}</h4>
-          <p className="tagline">{props.currentMovie.tagline}</p>
-          <p className="modal-text">{props.currentMovie.overview}</p>
-            <p className="modal-title">Average Rating: <span className="modal-text">{(props.currentMovie.average_rating/2).toFixed(1)}</span></p>
-          <div className="movie-specs">
+        <section className='modal-top'>
+          <button className='close-button' onClick = {() => props.closeSelectMovie()}>X</button>
+          <img className='banner' src={props.currentMovie.backdrop_path} alt={`Scene from "${props.currentMovie.title}"` }/>
+          <span className='movie-info'>
+            <h4 className="movie-title">{props.currentMovie.title}</h4>
+            <p className="tagline">{props.currentMovie.tagline}</p>
+            <p className="modal-text">Rating: <span className="rating">{(props.currentMovie.average_rating/2).toFixed(1)} / 5</span></p>
+          </span>
+        </section>
+            <p className="modal-text">{props.currentMovie.overview}</p>
+          <div className="movie-details">
             <p className="modal-title">Release Date: <span className="modal-text">{(props.currentMovie.release_date)}</span></p>
             <p className="modal-title">Run Time: <span className="modal-text">{props.currentMovie.runtime}</span></p>
             <p className="modal-title">Budget: <span className="modal-text">{props.currentMovie.budget}</span></p>
             <p className="modal-title">Revenue: <span className="modal-text">{props.currentMovie.revenue}</span></p>
           </div>
-        </div>
       </article>
     </div>
 
