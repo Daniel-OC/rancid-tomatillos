@@ -43,9 +43,10 @@
 
 .modal-wrapper {
   width: 50rem;
-  height: 90vh;
+  min-height: 60vh;
   max-width: calc(100vw - 2rem);
   max-height: calc(100vh - 2rem);
+  background-color: v.$darkBlue;
 }
 
 .thumbnail {
@@ -60,7 +61,7 @@
   display: flex;
   overflow-y: auto;
   padding: 2%;
-  background-color: v.$darkBlue;
+  background-color: v.$darkBlue; 
 }
 
 .movie-info {
@@ -80,6 +81,10 @@
   // object-fit: cover;
   background: linear-gradient(to top, v.$darkBlue,transparent 50%);
   opacity: 98%;
+}
+
+.movie-overview {
+  flex: 3;
 }
 
 .movie-title {
@@ -105,4 +110,5 @@
   flex-wrap: wrap;
   margin: 0 2%;
   justify-content: space-between;
+  flex: 1;
 }
