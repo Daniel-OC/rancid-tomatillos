@@ -11,7 +11,7 @@ const checkForError = (response) => {
 }
 
 const getSingleMovie = (id) => {
-  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/id`)
+  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
   .then(response => checkForError(response))
 }
 
