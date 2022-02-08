@@ -60,7 +60,7 @@
 .modal-bottom {
   display: flex;
   overflow-y: auto;
-  padding: 2%;
+  padding: 2% 0;
   background-color: v.$darkBlue; 
 }
 
@@ -85,6 +85,7 @@
 
 .movie-overview {
   flex: 3;
+  margin: 0 2%;
 }
 
 .movie-title {
@@ -99,6 +100,7 @@
 
 .modal-text {
   color: v.$offWhite;
+  line-height: 1.5em;
 }
 
 .modal-title {
