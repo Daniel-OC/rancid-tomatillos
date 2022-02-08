@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactStars from 'react-stars'
-import './Card.scss'
+import ReactStars from 'react-stars';
+import './Card.scss';
 
 const Card = (props) => {
   // const [show, setShow] = React.useState(false);
@@ -11,7 +11,7 @@ const Card = (props) => {
       <div className='description-container'>
         <h4>{props.title}</h4>
         <div className='rating-container'>
-          <ReactStars className='star-rating' count={5} value={props.average_rating} size={16} color={'#f2f2f2'} color1={'#020202'} />
+          <ReactStars className='star-rating' count={5} value={props.average_rating} size={16} color2={'#ffd700'} color1={'#0D0D0D'} edit={false} />
           <p>{props.average_rating}</p>
         </div>
       </div>

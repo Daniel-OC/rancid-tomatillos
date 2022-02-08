@@ -1,5 +1,6 @@
 import React from 'react';
 import './SingleMovie.scss';
+import ReactStars from 'react-stars';
 // import Modal, { useModal } from 'react-top-modal';
 
 const SingleMovie = (props) => {
@@ -38,7 +39,11 @@ const SingleMovie = (props) => {
           <div className='movie-info'>
             <h4 className="movie-title">{props.currentMovie.title}</h4>
             <p className="tagline">{props.currentMovie.tagline}</p>
-            <p className="modal-text">Rating: <span className="rating">{(props.currentMovie.average_rating/2).toFixed(1)} / 5</span></p>
+            <div className='rating-container'>
+              <ReactStars className='star-rating' count={5} value={props.currentMovie.average_rating/2} size={16} color2={'#ffd700'} color1={'#F2F2F2'} edit={false}/>
+              <span className="rating">{(props.currentMovie.average_rating/2).toFixed(1)}
+              </span>
+            </div>
           </div>
         </section>
         <section className='modal-bottom'>
