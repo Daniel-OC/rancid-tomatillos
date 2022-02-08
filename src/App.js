@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter, Router, Route, Routes } from "react-router-dom";
 import {Modal, useModal} from 'react-top-modal';
 import './styles/App.scss';
 import './apiCalls'
@@ -42,17 +43,24 @@ class App extends React.Component {
     }
   }
 
+  home = () => {
+    <Header />
+  }
+
   render() {
-    // const [show, setShow] = React.useState(false);
     return (
-      // console.log(SingleMovie)
-      <main>
-        <Header />
-        {this.state.err && <section className="error"><h2 className="error-message">{this.state.err}</h2></section>}
-        {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />}
-        <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />
-        {/* {!this.state.currentMovie && <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />} */}
-      </main>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={
+          <main>
+            <Header />
+            {this.state.err && <section className="error"><h2 className="error-message">{this.state.err}</h2></section>}
+            {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />}
+            <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />
+          </main>} 
+          />
+        </Routes>
+      </BrowserRouter>
       
     )
   }
