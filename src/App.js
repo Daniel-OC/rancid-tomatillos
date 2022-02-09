@@ -8,6 +8,7 @@ import Footer from './Components/Footer/Footer'
 import AllMovies from "./Components/AllMovies/AllMovies";
 import SingleMovie from "./Components/SingleMovie/SingleMovie";
 import { getAllMovies, getSingleMovie } from "./apiCalls";
+import {Route, Switch} from "react-router-dom"
 
 class App extends React.Component {
   constructor() {
@@ -44,14 +45,15 @@ class App extends React.Component {
   }
 
   render() {
-    // const [show, setShow] = React.useState(false);
     return (
       // console.log(SingleMovie)
       <main>
         <Header />
-        {this.state.err && <section className="error"><h2 className="error-message">{this.state.err}</h2></section>}
-        {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />}
         <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />
+        <Switch>
+          <Route path="/" render={() => <AllMovies movies={this.state.movies} selectMovie={this.selectMovie}/>} /> 
+        </Switch>
+        {/* {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />} */}
         <Footer />
       </main>
       
@@ -60,3 +62,13 @@ class App extends React.Component {
 }
 
 export default App;
+
+// Need to make the bellow error message display using Route
+
+// {this.state.err && <section className="error"><h2 className="error-message">{this.state.err}</h2></section>}
+
+
+
+// Open and close modal conditional rendering below
+
+// {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />}
