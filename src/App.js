@@ -28,7 +28,7 @@ class App extends React.Component {
   }
 
   selectMovie = (id) => {
-    console.log(id);
+    console.log('selectMovie id', id);
     const foundMovie = getSingleMovie(id)
     .then(data => this.setState({currentMovie: data.movie}))
     .catch(error => this.setState({err: `${error}`}))
@@ -50,10 +50,15 @@ class App extends React.Component {
       <main>
         <Header />
         <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />
-        <Switch>
           <Route path="/" render={() => <AllMovies movies={this.state.movies} selectMovie={this.selectMovie}/>} /> 
-        </Switch>
-        {/* {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />} */}
+          <Route path="/:id" render={({ match }) => {
+            console.log('single movie match', match)
+            const movieToRender = this.state.movies.find(movie => movie.id === parseInt(match.params.id))
+
+            console.log('movieToRender', movieToRender)
+            return <SingleMovie {...movieToRender} />
+          }} />
+        {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />}
         <Footer />
       </main>
       
