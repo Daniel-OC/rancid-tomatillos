@@ -26,27 +26,37 @@ class SingleMovieCheck extends React.Component {
 
   getOverview(currentMovie) {
     const overview = currentMovie.overview === "" ? 'No overview available.' : currentMovie.overview;
+    return overview;
+  }
+
+  getReleaseDate(currentMovie) {
+    let dateProvided = currentMovie.release_date.split('-');
+    let [year, month, day] = dateProvided;
+    const releaseDate = [month, day, year].join('/');
+    return releaseDate;
+  }
+
+  getBudget(currentMovie) {
+    const budgetProvided = currentMovie.budget;
+    let budgetDollars = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(budgetProvided);
+    let budget = currentMovie.budget === 0 ? 'n/a' : `$${budgetDollars}`;
+    return budget;
+  }
+
+  getRevenue(currentMovie) {
+    const revenueProvided = currentMovie.revenue;
+    let revenueDollars = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(revenueProvided);
+    let revenue = currentMovie.revenue === 0 ? 'n/a' : `$${revenueDollars}`;
+    return revenue;
+  }
+
+  getRunTime(currentMovie) {
+    let runtime = currentMovie.runtime === 0 ? 'n/a' : `${currentMovie.runtime} minutes`;
+    return runtime;
   }
 
   render() {
-
     console.log(this.state.currentMovie)
-
-    // let dateProvided = this.state.currentMovie.release_date.split('-');
-    // let [year, month, day] = dateProvided;
-    // const releaseDate = [month, day, year].join('/');
-
-    // const budgetProvided = this.state.currentMovie.budget;
-    // let budgetDollars = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(budgetProvided);
-
-    // let budget = this.state.currentMovie.budget === 0 ? 'n/a' : `$${budgetDollars}`;
-
-    // const revenueProvided = this.state.currentMovie.revenue;
-    // let revenueDollars = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(revenueProvided);
-
-    // let revenue = this.state.currentMovie.revenue === 0 ? 'n/a' : `$${revenueDollars}`;
-
-    // let runtime = this.state.currentMovie.runtime === 0 ? 'n/a' : `${this.state.currentMovie.runtime} minutes`;
 
     return (
       <>
@@ -70,12 +80,12 @@ class SingleMovieCheck extends React.Component {
             <p className="modal-title">Overview</p>
             <p className="modal-text">{this.getOverview(this.state.currentMovie)}</p>
           </div>
-          {/* <div className="movie-details">
-            <p className="modal-title">Release Date: <span className="modal-text">{releaseDate}</span></p>
-            <p className="modal-title">Budget: <span className="modal-text">{budget}</span></p>
-            <p className="modal-title">Revenue: <span className="modal-text">{revenue}</span></p>
-            <p className="modal-title">Runtime: <span className="modal-text">{runtime}</span></p>
-          </div> */}
+          <div className="movie-details">
+            <p className="modal-title">Release Date: <span className="modal-text">{this.getReleaseDate(this.state.currentMovie)}</span></p>
+            <p className="modal-title">Budget: <span className="modal-text">{this.getBudget(this.state.currentMovie)}</span></p>
+            <p className="modal-title">Revenue: <span className="modal-text">{this.getRevenue(this.state.currentMovie)}</span></p>
+            <p className="modal-title">Runtime: <span className="modal-text">{this.getRunTime(this.state.currentMovie)}</span></p>
+          </div>
         </section> 
       </article>
     </div>}

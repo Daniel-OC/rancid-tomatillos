@@ -54,12 +54,9 @@ class App extends React.Component {
           <Route path="/:id" render={({ match }) => {
             console.log('single movie match', match)
             const movieToRender = this.state.movies.find(movie => movie.id === parseInt(match.params.id))
-            // const movieToRender = getSingleMovie(match.params.id).then(data => data)
-
             console.log('movieToRender', movieToRender)
             return <SingleMovieCheck id={match.params.id} />
           }} />
-        {/* {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />} */}
         <Footer />
       </main>
       
@@ -72,9 +69,3 @@ export default App;
 // Need to make the bellow error message display using Route
 
 // {this.state.err && <section className="error"><h2 className="error-message">{this.state.err}</h2></section>}
-
-
-
-// Open and close modal conditional rendering below
-
-// {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />}
