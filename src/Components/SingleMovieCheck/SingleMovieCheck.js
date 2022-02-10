@@ -98,8 +98,6 @@ class SingleMovieCheck extends React.Component {
           <span className='close-button'>
             <Link to={"/"}>X</Link>
           </span>
-          {/* <button className='close-button'>X</button>
-          </Link> */}
           <img className='banner' src={this.getBanner(this.state.currentMovie)} alt={`Scene from "${this.state.currentMovie.title}"` }/>
           <div className='movie-info'>
             <h4 className="movie-title">{this.state.currentMovie.title}</h4>

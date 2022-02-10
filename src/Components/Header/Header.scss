@@ -4,6 +4,18 @@
 header {
   background-color: v.$jeanBlue;
   padding: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
   font-size: 3em;
   font-family: v.$titleFont;
+}
+
+nav {
+  letter-spacing: 1px;
+  font-size: 1.2em;
+  text-transform: uppercase;
 }
