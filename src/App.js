@@ -58,7 +58,7 @@ class App extends React.Component {
             console.log('movieToRender', movieToRender)
             return <SingleMovie {...movieToRender} />
           }} />
-        {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />}
+        {/* {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />} */}
         <Footer />
       </main>
       

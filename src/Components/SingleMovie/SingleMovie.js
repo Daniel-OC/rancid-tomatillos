@@ -7,27 +7,27 @@ import {Link} from 'react-router-dom';
 const SingleMovie = (props) => {
   console.log('single movie prop', props)
 
-  // const movieId = props.currentMovie.id;
+  // const movieId = props.id;
 
-  const banner = props.currentMovie.backdrop_path.includes('NoPhotoAvailable') ? props.currentMovie.poster_path : props.currentMovie.backdrop_path;
+  const banner = props.backdrop_path.includes('NoPhotoAvailable') ? props.poster_path : props.backdrop_path;
   
-  const overview = props.currentMovie.overview === "" ? 'No overview available.' : props.currentMovie.overview;
+  const overview = props.overview === "" ? 'No overview available.' : props.overview;
 
-  let dateProvided = props.currentMovie.release_date.split('-');
+  let dateProvided = props.release_date.split('-');
   let [year, month, day] = dateProvided;
   const releaseDate = [month, day, year].join('/');
 
-  const budgetProvided = props.currentMovie.budget;
+  const budgetProvided = props.budget;
   let budgetDollars = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(budgetProvided);
 
-  let budget = props.currentMovie.budget === 0 ? 'n/a' : `$${budgetDollars}`;
+  let budget = props.budget === 0 ? 'n/a' : `$${budgetDollars}`;
 
-  const revenueProvided = props.currentMovie.revenue;
+  const revenueProvided = props.revenue;
   let revenueDollars = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(revenueProvided);
 
-  let revenue = props.currentMovie.revenue === 0 ? 'n/a' : `$${revenueDollars}`;
+  let revenue = props.revenue === 0 ? 'n/a' : `$${revenueDollars}`;
 
-  let runtime = props.currentMovie.runtime === 0 ? 'n/a' : `${props.currentMovie.runtime} minutes`;
+  let runtime = props.runtime === 0 ? 'n/a' : `${props.runtime} minutes`;
 
   const showBlur = () => {
     document.querySelector('.movie-container').classList.add('blur')
@@ -50,18 +50,18 @@ const SingleMovie = (props) => {
 
 
   return (
-    // <Link to={`/${props.currentMovie.id}`}>
+    // <Link to={`/${props.id}`}>
       <div className='modal'>
         <article className='modal-wrapper'>
           <section className='modal-top'>
             <button className='close-button' onClick = {() => props.closeSelectMovie()}>X</button>
-            <img className='banner' src={banner} alt={`Scene from "${props.currentMovie.title}"` }/>
+            <img className='banner' src={banner} alt={`Scene from "${props.title}"` }/>
             <div className='movie-info'>
-              <h4 className="movie-title">{props.currentMovie.title}</h4>
-              <p className="tagline">{props.currentMovie.tagline}</p>
+              <h4 className="movie-title">{props.title}</h4>
+              <p className="tagline">{props.tagline}</p>
               <div className='rating-container'>
-                <ReactStars className='star-rating' count={5} value={props.currentMovie.average_rating/2} size={16} color2={'#ffd700'} color1={'#F2F2F2'} edit={false}/>
-                <span className="rating">{(props.currentMovie.average_rating/2).toFixed(1)}</span>
+                <ReactStars className='star-rating' count={5} value={props.average_rating/2} size={16} color2={'#ffd700'} color1={'#F2F2F2'} edit={false}/>
+                <span className="rating">{(props.average_rating/2).toFixed(1)}</span>
               </div>
             </div>
           </section>
