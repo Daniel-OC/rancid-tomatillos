@@ -6,7 +6,7 @@ import './apiCalls'
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
 import AllMovies from "./Components/AllMovies/AllMovies";
-import SingleMovie from "./Components/SingleMovie/SingleMovie";
+import SingleMovieCheck from "./Components/SingleMovieCheck/SingleMovieCheck";
 import { getAllMovies, getSingleMovie } from "./apiCalls";
 import {Route, Switch} from "react-router-dom"
 
@@ -54,9 +54,10 @@ class App extends React.Component {
           <Route path="/:id" render={({ match }) => {
             console.log('single movie match', match)
             const movieToRender = this.state.movies.find(movie => movie.id === parseInt(match.params.id))
+            // const movieToRender = getSingleMovie(match.params.id).then(data => data)
 
             console.log('movieToRender', movieToRender)
-            return <SingleMovie {...movieToRender} />
+            return <SingleMovieCheck id={match.params.id} />
           }} />
         {/* {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />} */}
         <Footer />
