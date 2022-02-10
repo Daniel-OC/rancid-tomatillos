@@ -10,13 +10,44 @@ class SingleMovieCheck extends React.Component {
     super(props);
       this.state = {
         id: props.id,
-        currentMovie: null
+        currentMovie: null,
+    
       }
   }
 
   componentDidMount() {
+    console.log(this.state)
     getSingleMovie(this.state.id)
       .then(data => this.setState({currentMovie: data.movie}))
+      .then(() => {
+        this.showBlur()
+        // document.body.addEventListener('keydown', this.closeOnEscapeKey)
+      })
+  }
+
+  componentWillUnmount() {
+    this.removeBlur()
+    // document.body.removeEventListener('keydown', this.closeOnEscapeKey)
+  }
+
+  closeSelectMovie = () => {
+    this.setState({ currentMovie: null });
+  }
+
+  // closeOnEscapeKey = (event) => {
+  //   if ((event.charCode || event.keyCode) === 27) {
+  //     this.closeSelectMovie()
+  //   }
+  // }
+
+  showBlur = () => {
+    document.querySelector('.movie-container').classList.add('blur')
+    document.querySelector('body').classList.add('blur')
+  }
+
+  removeBlur = () => {
+    document.querySelector('.movie-container').classList.remove('blur')
+    document.querySelector('body').classList.remove('blur')
   }
 
   getBanner(currentMovie) {
@@ -64,7 +95,9 @@ class SingleMovieCheck extends React.Component {
       <div className='modal'>
       <article className='modal-wrapper'>
         <section className='modal-top'>
-          <button className='close-button' onClick = {() => this.state.currentMovie.closeSelectMovie()}>X</button>
+          <Link to={"/"}>
+          <button className='close-button'>X</button>
+          </Link>
           <img className='banner' src={this.getBanner(this.state.currentMovie)} alt={`Scene from "${this.state.currentMovie.title}"` }/>
           <div className='movie-info'>
             <h4 className="movie-title">{this.state.currentMovie.title}</h4>
@@ -91,16 +124,6 @@ class SingleMovieCheck extends React.Component {
     </div>}
     </>
     )
-  }
-
-  showBlur = () => {
-    document.querySelector('.movie-container').classList.add('blur')
-    document.querySelector('body').classList.add('blur')
-  }
-
-  removeBlur = () => {
-    document.querySelector('.movie-container').classList.remove('blur')
-    document.querySelector('body').classList.remove('blur')
   }
 
 //   React.useEffect(() => {
