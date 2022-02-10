@@ -13,17 +13,17 @@ const Footer = () => {
           <h3>Follow Us</h3>
           <section className="repo">
               <h4>Project Repo</h4>
-              <a href='https://github.com/Daniel-OC/rancid-tomatillos' target='_blank'>github.com/Daniel-OC/rancid-tomatillos</a>
+              <a href='https://github.com/Daniel-OC/rancid-tomatillos' target='_blank' rel="noreferrer">github.com/Daniel-OC/rancid-tomatillos</a>
           </section>
           <section className="github">
               <h4>GitHub Profiles</h4>
-              <a href='https://github.com/janitastic' target='_blank'>Janitastic</a> |  
-              <a href='https://github.com/Daniel-OC' target='_blank'>Daniel-OC</a>
+              <a href='https://github.com/janitastic' target='_blank' rel="noreferrer">Janitastic</a> |  
+              <a href='https://github.com/Daniel-OC' target='_blank' rel="noreferrer">Daniel-OC</a>
           </section>
           <section className="linkedin">
             <h4>LinkedIn</h4>
-            <a href='https://www.linkedin.com/in/janipalomino/' target='_blank'>Jani Palomino</a> | 
-            <a href='https://www.linkedin.com/in/daniel-o-connell-maker/' target='_blank'>Daniel O'Connell</a>
+            <a href='https://www.linkedin.com/in/janipalomino/' target='_blank' rel="noreferrer">Jani Palomino</a> | 
+            <a href='https://www.linkedin.com/in/daniel-o-connell-maker/' target='_blank' rel="noreferrer">Daniel O'Connell</a>
           </section>
         </div>
       </div>
