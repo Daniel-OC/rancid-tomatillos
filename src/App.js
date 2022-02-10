@@ -1,5 +1,5 @@
 import React from "react";
-import {Modal, useModal} from 'react-top-modal';
+import { Modal } from 'react-top-modal';
 import './styles/App.scss';
 import './apiCalls'
 // import movieTestData from './movieTestData';
@@ -8,7 +8,7 @@ import Footer from './Components/Footer/Footer'
 import AllMovies from "./Components/AllMovies/AllMovies";
 import SingleMovieCheck from "./Components/SingleMovieCheck/SingleMovieCheck";
 import { getAllMovies, getSingleMovie } from "./apiCalls";
-import {Route, Switch} from "react-router-dom"
+import { Route } from "react-router-dom"
 
 class App extends React.Component {
   constructor() {
@@ -29,7 +29,7 @@ class App extends React.Component {
 
   selectMovie = (id) => {
     console.log('selectMovie id', id);
-    const foundMovie = getSingleMovie(id)
+    getSingleMovie(id)
     .then(data => this.setState({currentMovie: data.movie}))
     .catch(error => this.setState({err: `${error}`}))
   }

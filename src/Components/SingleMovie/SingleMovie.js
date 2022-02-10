@@ -50,7 +50,6 @@ const SingleMovie = (props) => {
 
 
   return (
-    // <Link to={`/${props.id}`}>
       <div className='modal'>
         <article className='modal-wrapper'>
           <section className='modal-top'>
@@ -79,7 +78,6 @@ const SingleMovie = (props) => {
           </section>
         </article>
       </div>
-    // </Link>
   )
 };
 
