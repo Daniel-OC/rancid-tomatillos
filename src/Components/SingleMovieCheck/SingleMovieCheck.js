@@ -98,7 +98,9 @@ class SingleMovieCheck extends React.Component {
           <span className='close-button'>
             <Link to={"/"}>X</Link>
           </span>
-          <img className='banner' src={this.getBanner(this.state.currentMovie)} alt={`Scene from "${this.state.currentMovie.title}"` }/>
+          <div className='banner'>
+            <img className='banner-image' src={this.getBanner(this.state.currentMovie)} alt={`Scene from "${this.state.currentMovie.title}"` }/>
+            <div className='banner-image-overlay'></div>
           <div className='movie-info'>
             <h4 className="movie-title">{this.state.currentMovie.title}</h4>
             <p className="tagline">{this.state.currentMovie.tagline}</p>
@@ -106,6 +108,7 @@ class SingleMovieCheck extends React.Component {
               <ReactStars className='star-rating' count={5} value={this.state.currentMovie.average_rating/2} size={16} color2={'#ffd700'} color1={'#F2F2F2'} edit={false}/>
               <span className="rating">{(this.state.currentMovie.average_rating/2).toFixed(1)}</span>
             </div>
+          </div>
           </div>
         </section>
         <section className='modal-bottom'>
