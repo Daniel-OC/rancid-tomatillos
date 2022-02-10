@@ -35,7 +35,6 @@ class App extends React.Component {
     return (
         <main>
         <Header />
-        <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />
           <Route path="/" render={() => <AllMovies movies={this.state.movies} selectMovie={this.selectMovie}/>} /> 
           <Route path="/:id" render={({match}) => {
             // console.log('single movie match', match)

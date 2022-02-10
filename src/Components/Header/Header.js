@@ -9,9 +9,9 @@ const Header = () => {
         <h1>Palomino + O'Connell | Fine Film Critics</h1>
       </section>
       <nav>
-        <NavLink to='/' className="activate">Home</NavLink>
-        <NavLink to='/694919' className="activate">About</NavLink>
-        <NavLink to='/search' className="activate">Search</NavLink>
+        <NavLink to='/'>Home</NavLink>
+        <NavLink to='/694919'>About</NavLink>
+        <NavLink to='/search'>Search</NavLink>
       </nav>
     </header>
   )
