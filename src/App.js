@@ -6,8 +6,9 @@ import './apiCalls'
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
 import AllMovies from "./Components/AllMovies/AllMovies";
-import SingleMovie from "./Components/SingleMovie/SingleMovie";
+import SingleMovieCheck from "./Components/SingleMovieCheck/SingleMovieCheck";
 import { getAllMovies, getSingleMovie } from "./apiCalls";
+import {Route, Switch} from "react-router-dom"
 
 class App extends React.Component {
   constructor() {
@@ -27,7 +28,7 @@ class App extends React.Component {
   }
 
   selectMovie = (id) => {
-    console.log(id);
+    console.log('selectMovie id', id);
     const foundMovie = getSingleMovie(id)
     .then(data => this.setState({currentMovie: data.movie}))
     .catch(error => this.setState({err: `${error}`}))
@@ -44,14 +45,18 @@ class App extends React.Component {
   }
 
   render() {
-    // const [show, setShow] = React.useState(false);
     return (
       // console.log(SingleMovie)
       <main>
         <Header />
-        {this.state.err && <section className="error"><h2 className="error-message">{this.state.err}</h2></section>}
-        {this.state.currentMovie && <SingleMovie closeSelectMovie={this.closeSelectMovie} closeOnEscapeKey={this.closeOnEscapeKey} currentMovie={this.state.currentMovie} />}
         <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />
+          <Route path="/" render={() => <AllMovies movies={this.state.movies} selectMovie={this.selectMovie}/>} /> 
+          <Route path="/:id" render={({ match }) => {
+            console.log('single movie match', match)
+            const movieToRender = this.state.movies.find(movie => movie.id === parseInt(match.params.id))
+            console.log('movieToRender', movieToRender)
+            return <SingleMovieCheck id={match.params.id} />
+          }} />
         <Footer />
       </main>
       
@@ -60,3 +65,7 @@ class App extends React.Component {
 }
 
 export default App;
+
+// Need to make the bellow error message display using Route
+
+// {this.state.err && <section className="error"><h2 className="error-message">{this.state.err}</h2></section>}
