@@ -1,7 +1,6 @@
 import React from 'react';
 import '../SingleMovie/SingleMovie.scss';
 import ReactStars from 'react-stars';
-// import Modal, { useModal } from 'react-top-modal';
 import {Link} from 'react-router-dom';
 import {getSingleMovie} from '../../apiCalls'
 

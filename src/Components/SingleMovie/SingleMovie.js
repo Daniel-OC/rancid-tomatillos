@@ -1,8 +1,7 @@
 import React from 'react';
 import './SingleMovie.scss';
 import ReactStars from 'react-stars';
-// import Modal, { useModal } from 'react-top-modal';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const SingleMovie = (props) => {
   console.log('single movie prop', props)
