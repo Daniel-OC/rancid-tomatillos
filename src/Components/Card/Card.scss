@@ -1,6 +1,7 @@
 @use '../../styles/variables' as v;
 @use '../../styles/mixins' as m;
 
+
 .movie-wrapper {
   display: grid;
   grid-template-columns: 20% 80%;
@@ -9,7 +10,7 @@
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.01);
+    transform: scale(1.02);
   }
 
   .thumbnail {
@@ -28,6 +29,7 @@
   
   .star-rating {
     margin: 0 1% 0 0;
+    // flex: 2;
   }
   
   h2 {
@@ -43,7 +45,7 @@
   
   p {
     color: v.$darkBlue;
-    font-size: 1em;
+    font-size: 1.2em;
   }
 
   .info-button {

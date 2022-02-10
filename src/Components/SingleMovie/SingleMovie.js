@@ -1,86 +1,132 @@
 import React from 'react';
-import './SingleMovie.scss';
+import '../SingleMovie/SingleMovie.scss';
 import ReactStars from 'react-stars';
-// import Modal, { useModal } from 'react-top-modal';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
+import {getSingleMovie} from '../../apiCalls'
 
-const SingleMovie = (props) => {
-  console.log('single movie prop', props)
+class SingleMovie extends React.Component {
+  constructor(props) {
+    super(props);
+      this.state = {
+        id: props.id,
+        currentMovie: null,
+      }
+  }
 
-  // const movieId = props.id;
+  componentDidMount() {
+    console.log(this.state)
+    getSingleMovie(this.state.id)
+      .then(data => this.setState({currentMovie: data.movie}))
+      .then(() => {
+        this.showBlur()
+        // document.body.addEventListener('keydown', this.closeOnEscapeKey)
+      })
+  }
 
-  const banner = props.backdrop_path.includes('NoPhotoAvailable') ? props.poster_path : props.backdrop_path;
-  
-  const overview = props.overview === "" ? 'No overview available.' : props.overview;
+  componentWillUnmount() {
+    this.removeBlur();
+    // <Redirect to="/" />
+  }
 
-  let dateProvided = props.release_date.split('-');
-  let [year, month, day] = dateProvided;
-  const releaseDate = [month, day, year].join('/');
+  // closeSelectMovie = () => {
+  //   this.setState({ currentMovie: null });
+  //   this.componentWillUnmount()
+  // }
 
-  const budgetProvided = props.budget;
-  let budgetDollars = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(budgetProvided);
+  // closeOnEscapeKey = (event) => {
+  //   if ((event.charCode || event.keyCode) === 27) {
+  //     this.closeSelectMovie()
+  //   }
+  // }
 
-  let budget = props.budget === 0 ? 'n/a' : `$${budgetDollars}`;
-
-  const revenueProvided = props.revenue;
-  let revenueDollars = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(revenueProvided);
-
-  let revenue = props.revenue === 0 ? 'n/a' : `$${revenueDollars}`;
-
-  let runtime = props.runtime === 0 ? 'n/a' : `${props.runtime} minutes`;
-
-  const showBlur = () => {
+  showBlur = () => {
     document.querySelector('.movie-container').classList.add('blur')
     document.querySelector('body').classList.add('blur')
   }
 
-  const removeBlur = () => {
+  removeBlur = () => {
     document.querySelector('.movie-container').classList.remove('blur')
     document.querySelector('body').classList.remove('blur')
   }
 
-  React.useEffect(() => {
-    document.body.addEventListener('keydown', props.closeOnEscapeKey)
-    showBlur()
-    return function cleanup() {
-      removeBlur()
-      document.body.removeEventListener('keydown', props.closeOnEscapeKey)
-    }
-  }, [])
+  getBanner(currentMovie) {
+    const banner = currentMovie.backdrop_path.includes('NoPhotoAvailable') ? currentMovie.poster_path : currentMovie.backdrop_path;
+    return banner;
+  }
 
+  getOverview(currentMovie) {
+    const overview = currentMovie.overview === "" ? 'No overview available.' : currentMovie.overview;
+    return overview;
+  }
 
-  return (
-    // <Link to={`/${props.id}`}>
+  getReleaseDate(currentMovie) {
+    let dateProvided = currentMovie.release_date.split('-');
+    let [year, month, day] = dateProvided;
+    const releaseDate = [month, day, year].join('/');
+    return releaseDate;
+  }
+
+  getBudget(currentMovie) {
+    const budgetProvided = currentMovie.budget;
+    let budgetDollars = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(budgetProvided);
+    let budget = currentMovie.budget === 0 ? 'n/a' : `$${budgetDollars}`;
+    return budget;
+  }
+
+  getRevenue(currentMovie) {
+    const revenueProvided = currentMovie.revenue;
+    let revenueDollars = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(revenueProvided);
+    let revenue = currentMovie.revenue === 0 ? 'n/a' : `$${revenueDollars}`;
+    return revenue;
+  }
+
+  getRunTime(currentMovie) {
+    let runtime = currentMovie.runtime === 0 ? 'n/a' : `${currentMovie.runtime} minutes`;
+    return runtime;
+  }
+
+  render() {
+    console.log(this.state.currentMovie)
+
+    return (
+      <>
+      {this.state.currentMovie && 
       <div className='modal'>
-        <article className='modal-wrapper'>
-          <section className='modal-top'>
-            <button className='close-button' onClick = {() => props.closeSelectMovie()}>X</button>
-            <img className='banner' src={banner} alt={`Scene from "${props.title}"` }/>
-            <div className='movie-info'>
-              <h4 className="movie-title">{props.title}</h4>
-              <p className="tagline">{props.tagline}</p>
-              <div className='rating-container'>
-                <ReactStars className='star-rating' count={5} value={props.average_rating/2} size={16} color2={'#ffd700'} color1={'#F2F2F2'} edit={false}/>
-                <span className="rating">{(props.average_rating/2).toFixed(1)}</span>
-              </div>
+      <article className='modal-wrapper'>
+        <section className='modal-top'>
+          <span className='close-button'>
+            <Link to={"/"}>X</Link>
+          </span>
+          <div className='banner'>
+            <img className='banner-image' src={this.getBanner(this.state.currentMovie)} alt={`Scene from "${this.state.currentMovie.title}"` }/>
+            <div className='banner-image-overlay'></div>
+          <div className='movie-info'>
+            <h4 className="movie-title">{this.state.currentMovie.title}</h4>
+            <p className="tagline">{this.state.currentMovie.tagline}</p>
+            <div className='rating-container'>
+              <ReactStars className='star-rating' count={5} value={this.state.currentMovie.average_rating/2} size={18} color2={'#ffd700'} color1={'#F2F2F2'} edit={false}/>
+              <span className="rating">{(this.state.currentMovie.average_rating/2).toFixed(1)}</span>
             </div>
-          </section>
-          <section className='modal-bottom'>
-            <div className='movie-overview'>
-              <p className="modal-title">Overview</p>
-              <p className="modal-text">{overview}</p>
-            </div>
-            <div className="movie-details">
-              <p className="modal-title">Release Date: <span className="modal-text">{releaseDate}</span></p>
-              <p className="modal-title">Budget: <span className="modal-text">{budget}</span></p>
-              <p className="modal-title">Revenue: <span className="modal-text">{revenue}</span></p>
-              <p className="modal-title">Runtime: <span className="modal-text">{runtime}</span></p>
-            </div>
-          </section>
-        </article>
-      </div>
-    // </Link>
-  )
+          </div>
+          </div>
+        </section>
+        <section className='modal-bottom'>
+          <div className='movie-overview'>
+            <p className="modal-title">Overview</p>
+            <p className="modal-text">{this.getOverview(this.state.currentMovie)}</p>
+          </div>
+          <div className="movie-details">
+            <p className="modal-title">Release Date: <span className="modal-text">{this.getReleaseDate(this.state.currentMovie)}</span></p>
+            <p className="modal-title">Budget: <span className="modal-text">{this.getBudget(this.state.currentMovie)}</span></p>
+            <p className="modal-title">Revenue: <span className="modal-text">{this.getRevenue(this.state.currentMovie)}</span></p>
+            <p className="modal-title">Runtime: <span className="modal-text">{this.getRunTime(this.state.currentMovie)}</span></p>
+          </div>
+        </section> 
+      </article>
+    </div>}
+    </>
+    )
+  }
 };
 
 export default SingleMovie;
