@@ -8,8 +8,8 @@ const Card = (props) => {
   const averageRating = Number(props.average_rating);
 
   return (
-    <Link to={`/${props.id}`} style={{textDecoration: 'none'}}>
-      <article className='movie-wrapper' onClick={ () => props.selectMovie(props.id) }>
+    <Link to={`/${props.id}`}>
+      <article className='movie-wrapper'>
         <img className='thumbnail' src={props.poster_path} alt={`"${props.title}" poster`}/>
         <div className='description-container'>
           <h2>{props.title}</h2>

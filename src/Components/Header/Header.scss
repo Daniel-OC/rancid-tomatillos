@@ -3,19 +3,34 @@
 
 header {
   background-color: v.$jeanBlue;
-  padding: 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.logo {
+  flex: 3;
+}
+
 h1 {
   font-size: 3em;
   font-family: v.$titleFont;
+  padding: 2%;
 }
 
 nav {
-  letter-spacing: 1px;
-  font-size: 1.2em;
-  text-transform: uppercase;
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  line-height: 3em;
+  padding: 2%;
+}
+
+a {
+  letter-spacing: 1px !important;
+  font-size: 1.2em !important;
+}
+
+.active {
+  border-bottom: 4px solid v.$lightBrown;
 }
