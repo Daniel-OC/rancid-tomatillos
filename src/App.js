@@ -1,8 +1,6 @@
 import React from "react";
-import { Modal } from 'react-top-modal';
 import './styles/App.scss';
 import './apiCalls'
-// import movieTestData from './movieTestData';
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
 import AllMovies from "./Components/AllMovies/AllMovies";
@@ -24,7 +22,6 @@ class App extends React.Component {
     getAllMovies()
     .then(data =>  this.setState({movies: data.movies}))
     .catch(error => this.setState({err: `${error}`}))
-    // .catch(error => console.log(error))
   }
 
   selectMovie = (id) => {
@@ -34,19 +31,8 @@ class App extends React.Component {
     .catch(error => this.setState({err: `${error}`}))
   }
 
-  // closeSelectMovie = () => {
-  //   this.setState({ currentMovie: null });
-  // }
-
-  // closeOnEscapeKey = (event) => {
-  //   if ((event.charCode || event.keyCode) === 27) {
-  //     this.closeSelectMovie()
-  //   }
-  // }
-
   render() {
     return (
-      // console.log(SingleMovie)
         <main>
         <Header />
         <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />

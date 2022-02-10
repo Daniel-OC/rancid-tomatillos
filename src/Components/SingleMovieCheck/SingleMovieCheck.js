@@ -105,7 +105,7 @@ class SingleMovieCheck extends React.Component {
             <h4 className="movie-title">{this.state.currentMovie.title}</h4>
             <p className="tagline">{this.state.currentMovie.tagline}</p>
             <div className='rating-container'>
-              <ReactStars className='star-rating' count={5} value={this.state.currentMovie.average_rating/2} size={16} color2={'#ffd700'} color1={'#F2F2F2'} edit={false}/>
+              <ReactStars className='star-rating' count={5} value={this.state.currentMovie.average_rating/2} size={18} color2={'#ffd700'} color1={'#F2F2F2'} edit={false}/>
               <span className="rating">{(this.state.currentMovie.average_rating/2).toFixed(1)}</span>
             </div>
           </div>
