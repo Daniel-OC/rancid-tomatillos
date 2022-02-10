@@ -34,32 +34,31 @@ class App extends React.Component {
     .catch(error => this.setState({err: `${error}`}))
   }
 
-  closeSelectMovie = () => {
-    this.setState({ currentMovie: null });
-  }
+  // closeSelectMovie = () => {
+  //   this.setState({ currentMovie: null });
+  // }
 
-  closeOnEscapeKey = (event) => {
-    if ((event.charCode || event.keyCode) === 27) {
-      this.closeSelectMovie()
-    }
-  }
+  // closeOnEscapeKey = (event) => {
+  //   if ((event.charCode || event.keyCode) === 27) {
+  //     this.closeSelectMovie()
+  //   }
+  // }
 
   render() {
     return (
       // console.log(SingleMovie)
-      <main>
+        <main>
         <Header />
         <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} />
           <Route path="/" render={() => <AllMovies movies={this.state.movies} selectMovie={this.selectMovie}/>} /> 
-          <Route path="/:id" render={({ match }) => {
-            console.log('single movie match', match)
-            const movieToRender = this.state.movies.find(movie => movie.id === parseInt(match.params.id))
-            console.log('movieToRender', movieToRender)
+          <Route path="/:id" render={({match}) => {
+            // console.log('single movie match', match)
+            // const movieToRender = this.state.movies.find(movie => movie.id === parseInt(match.params.id))
+            // console.log('movieToRender', movieToRender)
             return <SingleMovieCheck id={match.params.id} />
           }} />
         <Footer />
       </main>
-      
     )
   }
 }
