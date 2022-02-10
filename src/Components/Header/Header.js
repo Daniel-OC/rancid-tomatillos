@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
   return (
     <header>
-      <section class="logo">
+      <section className="logo">
         <h1>Palomino + O'Connell | Fine Film Critics</h1>
       </section>
       <nav>
