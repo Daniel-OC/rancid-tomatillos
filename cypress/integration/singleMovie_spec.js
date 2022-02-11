@@ -6,6 +6,7 @@ describe('SingleMove user flows', () => {
   it('SingleMovie should have all expected elements', () => {
     cy.visit('http://localhost:3000')
     cy.get('.movie-container').get('.movie-wrapper').first().click().get('.modal').get('.modal-wrapper')
+      .get('.blur')
       .get('.modal-top').get('.close-button').contains('X')
         .get('.banner').get('.banner-image').get('.banner-image-overlay')
         .get('.movie-info').get('h4').get('.movie-title').get('.tagline')
@@ -21,6 +22,5 @@ describe('SingleMove user flows', () => {
             .get('.modal-text')
           .get('.modal-title').contains('Runtime:')
             .get('.modal-text')
-      
   });
 })
