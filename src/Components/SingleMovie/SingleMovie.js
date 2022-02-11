@@ -3,6 +3,7 @@ import '../SingleMovie/SingleMovie.scss';
 import ReactStars from 'react-rating-stars-component';
 import { Link } from 'react-router-dom';
 import {getSingleMovie} from '../../apiCalls'
+import Error from '../Error/Error';
 
 class SingleMovie extends React.Component {
   constructor(props) {
@@ -10,6 +11,8 @@ class SingleMovie extends React.Component {
       this.state = {
         id: props.id,
         currentMovie: null,
+        err: '',
+        selectMovie: props.selectMovie
       }
   }
 
@@ -21,6 +24,7 @@ class SingleMovie extends React.Component {
         this.showBlur()
         // document.body.addEventListener('keydown', this.closeOnEscapeKey)
       })
+      .catch(error => this.state.selectMovie(error))
   }
 
   componentWillUnmount() {
@@ -86,9 +90,9 @@ class SingleMovie extends React.Component {
   }
 
   render() {
-    console.log(this.state.currentMovie)
     return (
       <>
+      {this.state.err && <Error />}
       {this.state.currentMovie && 
       <div className='modal'>
       <article className='modal-wrapper'>

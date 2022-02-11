@@ -25,11 +25,8 @@ class App extends React.Component {
     .catch(error => this.setState({err: `${error}`}))
   }
 
-  selectMovie = (id) => {
-    getSingleMovie(id)
-    .then(data => this.setState({currentMovie: data.movie}))
-    .catch(error => console.log(error))
-    // .catch(error => this.setState({err: `${error}`}))
+  selectMovie = (error) => {
+    this.setState({err: `${error}` })
   }
 
   render() {
@@ -45,7 +42,7 @@ class App extends React.Component {
             console.log('single movie match', this.state, match)
             // const movieToRender = this.state.movies.find(movie => movie.id === parseInt(match.params.id))
             // console.log('movieToRender', movieToRender)
-            return <SingleMovie id={match.params.id} />
+            return <SingleMovie id={match.params.id} selectMovie={this.selectMovie}/>
           }} />
         <Footer />
       </main>
