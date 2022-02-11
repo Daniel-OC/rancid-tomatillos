@@ -5,6 +5,7 @@ import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
 import AllMovies from "./Components/AllMovies/AllMovies";
 import SingleMovie from "./Components/SingleMovie/SingleMovie";
+import Error from './Components/Error/Error'
 import { getAllMovies, getSingleMovie } from "./apiCalls";
 import { Route } from "react-router-dom"
 
@@ -32,10 +33,14 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.err)
     return (
         <main>
         <Header />
-          <Route path="/" render={() => <AllMovies movies={this.state.movies} selectMovie={this.selectMovie}/>} /> 
+          <Route path="/" render={() => <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} error ={this.state.err}/>}/>
+          {/* <Route exact path="/error" render={() => {
+            return <Error error={this.state.err}/>
+          }}/> */}
           <Route path="/:id" render={({match}) => {
             // console.log('single movie match', match)
             // const movieToRender = this.state.movies.find(movie => movie.id === parseInt(match.params.id))

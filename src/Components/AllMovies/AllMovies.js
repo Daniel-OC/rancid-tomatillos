@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card'
+import Error from '../Error/Error';
 import './AllMovies.scss';
 
 const AllMovies = (props) => {
@@ -21,9 +22,12 @@ const AllMovies = (props) => {
 
 
   return(
+    !props.error?
     <section className="movie-container">
       {movieCards}
     </section>
+    :
+    <Error error={props.error}/>
   ) 
 }
 

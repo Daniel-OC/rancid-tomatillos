@@ -87,7 +87,6 @@ class SingleMovie extends React.Component {
 
   render() {
     console.log(this.state.currentMovie)
-
     return (
       <>
       {this.state.currentMovie && 
