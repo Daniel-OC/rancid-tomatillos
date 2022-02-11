@@ -26,23 +26,23 @@ class App extends React.Component {
   }
 
   selectMovie = (id) => {
-    console.log('selectMovie id', id);
     getSingleMovie(id)
     .then(data => this.setState({currentMovie: data.movie}))
-    .catch(error => this.setState({err: `${error}`}))
+    .catch(error => console.log(error))
+    // .catch(error => this.setState({err: `${error}`}))
   }
 
   render() {
-    console.log(this.state.err)
+    console.log('state on app', this.state)
     return (
         <main>
         <Header />
-          <Route path="/" render={() => <AllMovies movies={this.state.movies} selectMovie={this.selectMovie} error ={this.state.err}/>}/>
+          <Route path="/" render={() => <AllMovies movies={this.state.movies} error ={this.state.err}/>}/>
           {/* <Route exact path="/error" render={() => {
             return <Error error={this.state.err}/>
           }}/> */}
           <Route path="/:id" render={({match}) => {
-            // console.log('single movie match', match)
+            console.log('single movie match', this.state, match)
             // const movieToRender = this.state.movies.find(movie => movie.id === parseInt(match.params.id))
             // console.log('movieToRender', movieToRender)
             return <SingleMovie id={match.params.id} />

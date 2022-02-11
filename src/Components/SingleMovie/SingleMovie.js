@@ -14,7 +14,7 @@ class SingleMovie extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.state)
+    console.log('state on movie click', this.state)
     getSingleMovie(this.state.id)
       .then(data => this.setState({currentMovie: data.movie}))
       .then(() => {
