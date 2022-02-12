@@ -20,8 +20,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    console.log('refreshed home', this.state)
     getAllMovies()
-    .then(data =>  this.setState({movies: data.movies}))
+    .then(data =>  {
+      this.setState({movies: data.movies})
+      console.log("This is state",this.state)
+    })
     .catch(error => this.setState({err: `${error}`}))
   }
 
@@ -34,10 +38,8 @@ class App extends React.Component {
     return (
         <main>
         <Header />
+          {/* <Route path="/" render={() => <AllMovies movies={this.state.movies} error ={this.state.err}/>}/> */}
           <Route path="/" render={() => <AllMovies movies={this.state.movies} error ={this.state.err}/>}/>
-          {/* <Route exact path="/error" render={() => {
-            return <Error error={this.state.err}/>
-          }}/> */}
           <Route path="/:id" render={({match}) => {
             console.log('single movie match', this.state, match)
             // const movieToRender = this.state.movies.find(movie => movie.id === parseInt(match.params.id))

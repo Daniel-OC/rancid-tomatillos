@@ -1,0 +1,19 @@
+@use '../../styles/variables' as v;
+
+.error {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.error-message {
+  padding: 2%
+}
+
+.error-home-button{
+  border: 2px solid v.$offWhite;
+  margin: 2%;
+  padding: 2%;
+  width:fit-content;
+  align-self: center;
+}
