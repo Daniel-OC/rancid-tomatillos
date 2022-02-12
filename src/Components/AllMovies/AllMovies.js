@@ -1,9 +1,10 @@
 import React from 'react';
 import Card from '../Card/Card'
+import Error from '../Error/Error';
 import './AllMovies.scss';
 
 const AllMovies = (props) => {
-  // console.log(props)
+  console.log(props)
   const movieCards = props.movies.map(movie => {
     return(
       <Card
@@ -14,16 +15,18 @@ const AllMovies = (props) => {
         title= {movie.title}
         average_rating= {(movie.average_rating/2).toFixed(1)}
         release_date= {movie.release_date}
-        selectMovie = {props.selectMovie}
       />
     )
   })
 
 
   return(
+    !props.error?
     <section className="movie-container">
       {movieCards}
     </section>
+    :
+    <Error error={props.error}/>
   ) 
 }
 

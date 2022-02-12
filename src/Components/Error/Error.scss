@@ -1,0 +1,41 @@
+@use '../../styles/variables' as v;
+
+.error {
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.error-message {
+  padding: 2%
+}
+
+// .error-home-button{
+//   border: 2px solid v.$offWhite;
+//   margin: 2%;
+//   padding: 2%;
+//   width:fit-content;
+//   align-self: center;
+// }
+
+.error-home-button {
+  border: 2px solid v.$offWhite;
+  background-color: transparent;
+  color: v.$offWhite;
+  margin: 2% 0;
+  padding: 1% 2%;
+  font-size: 1.5em;
+  margin: 2%;
+  padding: 2%;
+  width:fit-content;
+  align-self: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: v.$lightBrown;
+    color: v.$darkBlue;
+    border: 2px solid v.$lightBrown;
+    transition: all 0.44s ease-in-out;
+  }
+}
