@@ -4,6 +4,7 @@ const checkForError = (response) => {
   } else if (!response.ok && response.status >= 500) {
     throw (`${response.status} Error. Something went wrong. Please try again!`)
   } else if (!response.ok) {
+    // Possibly refactor to account for 422 errors
     throw (`${response.status} Error. Something went wrong! Please refresh your page or clear your cache. If that doesn't work please try again later!`)
   } else {
     return response.json();
