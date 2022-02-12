@@ -33,6 +33,12 @@ class SingleMovie extends React.Component {
     data.movie.average_rating = (data.movie.average_rating/2).toFixed(1);
     data.movie.backdrop_path = data.movie.backdrop_path.includes('NoPhotoAvailable') ? data.movie.poster_path : data.movie.backdrop_path;
     data.movie.overview = data.movie.overview === "" ? 'No overview available.' : data.movie.overview;
+    data.movie.release_date = new Date(data.movie.release_date).toLocaleDateString("en-US", {year: "numeric", month:"2-digit", day:"2-digit"});
+    data.movie.budget = data.movie.budget === 0 ? 'N/A' : new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(data.movie.budget);
+    data.movie.revenue = data.movie.revenue === 0 ? 'N/A' : new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(data.movie.revenue);
+    data.movie.runtime =  data.movie.runtime === 0 ? 'N/A' : data.movie.runtime;
+    data.movie.genres = data.movie.genres.join(", ")
+
     return data
   }
 
@@ -110,10 +116,10 @@ class SingleMovie extends React.Component {
             <p className="tagline">{this.state.currentMovie.tagline}</p>
             <div className='rating-container'>
               <ReactStars className='star-rating' count={5} value={this.state.currentMovie.average_rating/2}  isHalf={true} size={22} activeColor={'#ffd700'} color={'#F2F2F2'} edit={false}/>
-              <span className="rating">{(this.state.currentMovie.average_rating/2).toFixed(1)}</span>
+              <span className="rating">{this.state.currentMovie.average_rating}</span>
             </div>
             <div className='genre-container'>
-            <p className="genres">{this.getGenres(this.state.currentMovie)}</p>
+            <p className="genres">{this.state.currentMovie.genres}</p>
             </div>
           </div>
           </div>
@@ -121,10 +127,10 @@ class SingleMovie extends React.Component {
         <section className='modal-bottom'>
           <div className='movie-overview'>
             <p className="modal-title">Overview</p>
-            <p className="modal-text">{this.getOverview(this.state.currentMovie)}</p>
+            <p className="modal-text">{this.state.currentMovie.overview}</p>
           </div>
           <div className="movie-details">
-            <p className="modal-title">Release Date: <span className="modal-text">{this.getReleaseDate(this.state.currentMovie)}</span></p>
+            <p className="modal-title">Release Date: <span className="modal-text">{this.state.currentMovie.release_date}</span></p>
             <p className="modal-title">Budget: <span className="modal-text">{this.getBudget(this.state.currentMovie)}</span></p>
             <p className="modal-title">Revenue: <span className="modal-text">{this.getRevenue(this.state.currentMovie)}</span></p>
             <p className="modal-title">Runtime: <span className="modal-text">{this.getRunTime(this.state.currentMovie)}</span></p>
