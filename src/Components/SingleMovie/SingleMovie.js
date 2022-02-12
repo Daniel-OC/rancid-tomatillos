@@ -32,17 +32,6 @@ class SingleMovie extends React.Component {
     // <Redirect to="/" />
   }
 
-  // closeSelectMovie = () => {
-  //   this.setState({ currentMovie: null });
-  //   this.componentWillUnmount()
-  // }
-
-  // closeOnEscapeKey = (event) => {
-  //   if ((event.charCode || event.keyCode) === 27) {
-  //     this.closeSelectMovie()
-  //   }
-  // }
-
   showBlur = () => {
     document.querySelector('.movie-container').classList.add('blur')
     document.querySelector('body').classList.add('blur')
@@ -89,6 +78,10 @@ class SingleMovie extends React.Component {
     return runtime;
   }
 
+  getGenres(currentMovie) {
+    return currentMovie.genres.join(",  ")
+  }
+
   render() {
     return (
       <>
@@ -109,6 +102,9 @@ class SingleMovie extends React.Component {
             <div className='rating-container'>
               <ReactStars className='star-rating' count={5} value={this.state.currentMovie.average_rating/2}  isHalf={true} size={22} activeColor={'#ffd700'} color={'#F2F2F2'} edit={false}/>
               <span className="rating">{(this.state.currentMovie.average_rating/2).toFixed(1)}</span>
+            </div>
+            <div className='genre-container'>
+            <p className="genres">{this.getGenres(this.state.currentMovie)}</p>
             </div>
           </div>
           </div>
