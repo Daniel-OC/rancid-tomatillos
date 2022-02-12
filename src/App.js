@@ -20,12 +20,18 @@ class App extends React.Component {
     }
   }
 
+  cleanAllMovies = (data) => {
+    return data.movies.map(movie => {
+      movie.average_rating = (movie.average_rating/2).toFixed(1);
+      movie.release_date = new Date(movie.release_date).toLocaleDateString("en-US", {year: "numeric", month:"2-digit", day:"2-digit"})
+      return movie
+    })
+  }
+
   componentDidMount() {
-    console.log('refreshed home', this.state)
     getAllMovies()
     .then(data =>  {
-      this.setState({movies: data.movies})
-      console.log("This is state",this.state)
+      this.setState({movies: this.cleanAllMovies(data)})
     })
     .catch(error => this.setState({err: `${error}`}))
   }
