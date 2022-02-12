@@ -5,11 +5,17 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background-image: url('../Error/error_dog.png');
+  background-repeat: no-repeat;
+  background-size: cover
 }
 
 .error-message {
-  padding: 2%
+  padding: 2%;
+  color: v.$darkBlue
 }
+
+
 
 // .error-home-button{
 //   border: 2px solid v.$offWhite;
@@ -20,9 +26,9 @@
 // }
 
 .error-home-button {
-  border: 2px solid v.$offWhite;
+  border: 2px solid v.$darkBlue;
   background-color: transparent;
-  color: v.$offWhite;
+  color: v.$darkBlue;
   margin: 2% 0;
   padding: 1% 2%;
   font-size: 1.5em;
@@ -33,9 +39,9 @@
 
   &:hover {
     cursor: pointer;
-    background-color: v.$lightBrown;
-    color: v.$darkBlue;
-    border: 2px solid v.$lightBrown;
+    background-color: v.$darkBlue;
+    color: v.$offWhite;
+    border: 2px solid v.$darkBlue;
     transition: all 0.44s ease-in-out;
   }
 }
