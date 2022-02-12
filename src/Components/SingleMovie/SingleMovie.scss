@@ -140,3 +140,17 @@ a:active { text-decoration: none; }
   flex: 1;
   font-size: 90%;
 }
+
+//Tablet portrait view
+@media (min-width: 768px) and (max-width: 1024px) {
+  .modal-bottom {
+    flex-direction: column;
+  }
+}
+
+//small mobile device view
+@media (min-width: 320px) and (max-width: 767px) {
+  .modal-bottom {
+    flex-direction: column;
+  }
+}

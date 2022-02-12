@@ -53,3 +53,14 @@ a {
   padding: .25em;
 }
 
+//Tablet portrait view
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+//small mobile device view
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer-content {
+    flex-direction: column;
+  }
+}

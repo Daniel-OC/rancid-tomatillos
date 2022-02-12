@@ -21,3 +21,17 @@ h1 {
     cursor: pointer;
   }
 }
+
+//Tablet portrait view
+@media (min-width: 768px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
+//small mobile device view
+@media (min-width: 320px) and (max-width: 767px) {
+  h1 {
+    font-size: 2em;
+  }
+}
