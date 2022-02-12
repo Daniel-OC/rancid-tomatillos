@@ -46,6 +46,7 @@
   p {
     color: v.$darkBlue;
     font-size: 1.2em;
+    margin-left: 1%;
   }
 
   .info-button {
@@ -54,7 +55,7 @@
     color: v.$darkBlue;
     margin: 2% 0;
     padding: 1% 2%;
-    font-size: 1em;
+    font-size: 1.2em;
 
     &:hover {
       cursor: pointer;
@@ -62,6 +63,34 @@
       color: v.$offWhite;
       border: 2px solid v.$jeanBlue;
       transition: all 0.44s ease-in-out;
+    }
+  }
+}
+
+//Tablet portrait view
+@media (min-width: 768px) and (max-width: 1024px) {
+  .movie-wrapper {
+    grid-template-columns: 40% 60%;
+
+    .info-button {
+      margin: 5% 0;
+      padding: 5% 10%;
+    }
+
+    .description-container {
+      padding: 10%;
+    }
+  }
+}
+
+//small mobile device view
+@media (min-width: 320px) and (max-width: 767px) {
+  .movie-wrapper {
+    grid-template-columns: 40% 60%;
+    
+    .info-button {
+      margin: 5% 0;
+      padding: 5% 10%;
     }
   }
 }
