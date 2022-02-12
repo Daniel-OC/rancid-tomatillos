@@ -1,6 +1,6 @@
 const checkForError = (response) => {
   if ((!response.ok && response.status >= 400) && response.status < 500) {
-    throw (`${response.status} Error. We can't find this page. Please return home.`)
+    throw (`${response.status} Error. Sorry, the page you're looking for doesn't seem to exist.`)
   } else if (!response.ok && response.status >= 500) {
     throw (`${response.status} Error. Something went wrong. Please try again!`)
   } else if (!response.ok) {
