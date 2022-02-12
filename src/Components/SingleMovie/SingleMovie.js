@@ -22,7 +22,6 @@ class SingleMovie extends React.Component {
       .then(data => this.setState({currentMovie: data.movie}))
       .then(() => {
         this.showBlur()
-        // document.body.addEventListener('keydown', this.closeOnEscapeKey)
       })
       .catch(error => this.state.selectMovie(error))
   }
@@ -36,13 +35,11 @@ class SingleMovie extends React.Component {
     data.movie.revenue = data.movie.revenue === 0 ? 'N/A' : `$${new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(data.movie.revenue)}`;
     data.movie.runtime =  data.movie.runtime === 0 ? 'N/A' : data.movie.runtime;
     data.movie.genres = data.movie.genres.join(", ")
-
     return data
   }
 
   componentWillUnmount() {
     this.removeBlur();
-    // <Redirect to="/" />
   }
 
   showBlur = () => {
@@ -53,46 +50,6 @@ class SingleMovie extends React.Component {
   removeBlur = () => {
     document.querySelector('.movie-container').classList.remove('blur')
     document.querySelector('body').classList.remove('blur')
-  }
-
-  getBanner(currentMovie) {
-    const banner = currentMovie.backdrop_path.includes('NoPhotoAvailable') ? currentMovie.poster_path : currentMovie.backdrop_path;
-    return banner;
-  }
-
-  getOverview(currentMovie) {
-    const overview = currentMovie.overview === "" ? 'No overview available.' : currentMovie.overview;
-    return overview;
-  }
-
-  getReleaseDate(currentMovie) {
-    let dateProvided = currentMovie.release_date.split('-');
-    let [year, month, day] = dateProvided;
-    const releaseDate = [month, day, year].join('/');
-    return releaseDate;
-  }
-
-  getBudget(currentMovie) {
-    const budgetProvided = currentMovie.budget;
-    let budgetDollars = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(budgetProvided);
-    let budget = currentMovie.budget === 0 ? 'n/a' : `$${budgetDollars}`;
-    return budget;
-  }
-
-  getRevenue(currentMovie) {
-    const revenueProvided = currentMovie.revenue;
-    let revenueDollars = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(revenueProvided);
-    let revenue = currentMovie.revenue === 0 ? 'n/a' : `$${revenueDollars}`;
-    return revenue;
-  }
-
-  getRunTime(currentMovie) {
-    let runtime = currentMovie.runtime === 0 ? 'n/a' : `${currentMovie.runtime} minutes`;
-    return runtime;
-  }
-
-  getGenres(currentMovie) {
-    return currentMovie.genres.join(",  ")
   }
 
   render() {
@@ -113,7 +70,7 @@ class SingleMovie extends React.Component {
             <h4 className="movie-title">{this.state.currentMovie.title}</h4>
             <p className="tagline">{this.state.currentMovie.tagline}</p>
             <div className='rating-container'>
-              <ReactStars className='star-rating' count={5} value={this.state.currentMovie.average_rating/2}  isHalf={true} size={22} activeColor={'#ffd700'} color={'#F2F2F2'} edit={false}/>
+              <ReactStars className='star-rating' count={5} value={this.state.currentMovie.average_rating}  isHalf={true} size={22} activeColor={'#ffd700'} color={'#F2F2F2'} edit={false}/>
               <span className="rating">{this.state.currentMovie.average_rating}</span>
             </div>
             <div className='genre-container'>
