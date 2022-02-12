@@ -17,14 +17,23 @@ class SingleMovie extends React.Component {
   }
 
   componentDidMount() {
-    console.log('state on movie click', this.state)
     getSingleMovie(this.state.id)
+      // .then(data => {
+      //   console.log(this.cleanSingleMovie(data))
+      //   return this.cleanSingleMovie(data)})
       .then(data => this.setState({currentMovie: data.movie}))
       .then(() => {
         this.showBlur()
         // document.body.addEventListener('keydown', this.closeOnEscapeKey)
       })
       .catch(error => this.state.selectMovie(error))
+  }
+
+  cleanSingleMovie(data) {
+    data.movie.average_rating = (data.movie.average_rating/2).toFixed(1);
+    data.movie.backdrop_path = data.movie.backdrop_path.includes('NoPhotoAvailable') ? data.movie.poster_path : data.movie.backdrop_path;
+    data.movie.overview = data.movie.overview === "" ? 'No overview available.' : data.movie.overview;
+    return data
   }
 
   componentWillUnmount() {
@@ -94,7 +103,7 @@ class SingleMovie extends React.Component {
             <Link to={"/"}>X</Link>
           </span>
           <div className='banner'>
-            <img className='banner-image' src={this.getBanner(this.state.currentMovie)} alt={`Scene from "${this.state.currentMovie.title}"` }/>
+            <img className='banner-image' src={this.state.currentMovie.backdrop_path} alt={`Scene from "${this.state.currentMovie.title}"` }/>
             <div className='banner-image-overlay'></div>
           <div className='movie-info'>
             <h4 className="movie-title">{this.state.currentMovie.title}</h4>
