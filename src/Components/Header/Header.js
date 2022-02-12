@@ -8,7 +8,7 @@ const Header = () => {
         <h1>Palomino + O'Connell | Fine Film Critics</h1>
       </section>
     </header>
-  )
-}
+  );
+};
 
 export default Header;
