@@ -18,9 +18,7 @@ class SingleMovie extends React.Component {
 
   componentDidMount() {
     getSingleMovie(this.state.id)
-      // .then(data => {
-      //   console.log(this.cleanSingleMovie(data))
-      //   return this.cleanSingleMovie(data)})
+      .then(data => this.cleanSingleMovie(data))
       .then(data => this.setState({currentMovie: data.movie}))
       .then(() => {
         this.showBlur()
@@ -34,8 +32,8 @@ class SingleMovie extends React.Component {
     data.movie.backdrop_path = data.movie.backdrop_path.includes('NoPhotoAvailable') ? data.movie.poster_path : data.movie.backdrop_path;
     data.movie.overview = data.movie.overview === "" ? 'No overview available.' : data.movie.overview;
     data.movie.release_date = new Date(data.movie.release_date).toLocaleDateString("en-US", {year: "numeric", month:"2-digit", day:"2-digit"});
-    data.movie.budget = data.movie.budget === 0 ? 'N/A' : new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(data.movie.budget);
-    data.movie.revenue = data.movie.revenue === 0 ? 'N/A' : new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(data.movie.revenue);
+    data.movie.budget = data.movie.budget === 0 ? 'N/A' : `$${new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(data.movie.budget)}`;
+    data.movie.revenue = data.movie.revenue === 0 ? 'N/A' : `$${new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(data.movie.revenue)}`;
     data.movie.runtime =  data.movie.runtime === 0 ? 'N/A' : data.movie.runtime;
     data.movie.genres = data.movie.genres.join(", ")
 
@@ -131,9 +129,9 @@ class SingleMovie extends React.Component {
           </div>
           <div className="movie-details">
             <p className="modal-title">Release Date: <span className="modal-text">{this.state.currentMovie.release_date}</span></p>
-            <p className="modal-title">Budget: <span className="modal-text">{this.getBudget(this.state.currentMovie)}</span></p>
-            <p className="modal-title">Revenue: <span className="modal-text">{this.getRevenue(this.state.currentMovie)}</span></p>
-            <p className="modal-title">Runtime: <span className="modal-text">{this.getRunTime(this.state.currentMovie)}</span></p>
+            <p className="modal-title">Budget: <span className="modal-text">{this.state.currentMovie.budget}</span></p>
+            <p className="modal-title">Revenue: <span className="modal-text">{this.state.currentMovie.revenue}</span></p>
+            <p className="modal-title">Runtime: <span className="modal-text">{this.state.currentMovie.runtime} minutes</span></p>
           </div>
         </section> 
       </article>
