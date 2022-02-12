@@ -1,13 +1,11 @@
 import React from 'react'
 import './Error.scss'
-import './Error-Dog.png'
 
 const Error = ({error}) => {
   let errorMessage = (
     <section className="error">
       <h2 className="error-message">{error}</h2>
       <button className='error-home-button' onClick={() => {window.location.href="/"}}>View All Movies</button>
-      <img src='./Error-Dog.png'/>
     </section>
   )
 
@@ -15,7 +13,6 @@ const Error = ({error}) => {
     errorMessage =(
     <section className="error">
       <h2 className="error-message">{error}</h2>
-      <img src='./Error-Dog.png'/>
     </section>
     )
   }

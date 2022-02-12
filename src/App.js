@@ -9,6 +9,7 @@ import Error from './Components/Error/Error'
 import { getAllMovies, getSingleMovie } from "./apiCalls";
 import { Route } from "react-router-dom"
 
+
 class App extends React.Component {
   constructor() {
     super();
