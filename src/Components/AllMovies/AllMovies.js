@@ -20,8 +20,13 @@ const AllMovies = (props) => {
 
   return(
     !props.error?
-    <section className='movie-container'>
-      {movieCards}
+    <section className='all-movie-view'>
+      <div className='toggle-buttons'>
+      <button className='info-button' id='toggleButton' onClick={() => {props.toggleButton()}}>Grid View</button>
+      </div>
+      <section className='movie-container'>
+        {movieCards}
+      </section>
     </section>
     :
     <Error error={props.error}/>

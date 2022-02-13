@@ -38,11 +38,27 @@ class App extends React.Component {
     this.setState({err: `${error}` })
   }
 
+  toggleButton = () => {
+    const movieContainer = document.querySelector('.movie-container');
+    const movieWrappers = document.querySelectorAll('.movie-wrapper');
+    const descriptionContainers = document.querySelectorAll('.description-container');
+    const toggleButton = document.querySelector('#toggleButton');
+
+    if (toggleButton.innerText === "Grid View") {
+      toggleButton.innerText = "List View"
+    } else {
+      toggleButton.innerText = "Grid View"
+    }
+    movieContainer.classList.toggle('grid');
+    movieWrappers.forEach(wrapper => wrapper.classList.toggle('no-columns'));
+    descriptionContainers.forEach(container => container.classList.toggle('hide'));
+  }
+
   render() {
     return (
         <main>
         <Header />
-          <Route path='/' render={() => <AllMovies movies={this.state.movies} error ={this.state.err}/>}/>
+          <Route path='/' render={() => <AllMovies movies={this.state.movies} error={this.state.err} toggleButton={this.toggleButton}/>}/>
           <Route path='/:id' render={({match}) => {
             return <SingleMovie id={match.params.id} setError={this.setError}/>
           }} />
