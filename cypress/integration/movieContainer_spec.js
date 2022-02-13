@@ -32,7 +32,6 @@ describe('MovieContainer User Flows', () => {
     cy.visit('http://localhost:3000')
     cy.get('.movie-container').get('.error')
       .get('h2').get('.error-message').contains('404 Error. Sorry, the page you\'re looking for doesn\'t seem to exist.')
-      // .get('.error-home-button').contains('View All Movies').click('a')
   })
 
   it('Should display an error in the event of a 500 error.', () => {
