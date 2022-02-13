@@ -9,12 +9,12 @@ describe('MovieContainer User Flows', () => {
       statusCode: 200,
       ok: true,
       body: {movies:[{
-        "id": 694919,
-        "poster_path": "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
-        "backdrop_path": "https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg",
-        "title": "Money Plane",
-        "average_rating": 6.666666666666667,
-        "release_date": "2020-09-29"
+        'id': 694919,
+        'poster_path': 'https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg',
+        'backdrop_path': 'https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg',
+        'title': 'Money Plane',
+        'average_rating': 6.666666666666667,
+        'release_date': '2020-09-29'
       }]}
     })
     cy.visit('http://localhost:3000')
@@ -41,12 +41,12 @@ describe('MovieContainer User Flows', () => {
       statusCode: 200,
       ok: true,
       body: {movies:[{
-        "id": 694919,
-        "poster_path": "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
-        "backdrop_path": "https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg",
-        "title": "Money Plane",
-        "average_rating": 6.666666666666667,
-        "release_date": "2020-09-29"
+        'id': 694919,
+        'poster_path': 'https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg',
+        'backdrop_path': 'https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg',
+        'title': 'Money Plane',
+        'average_rating': 6.666666666666667,
+        'release_date': '2020-09-29'
       }]}
     })
     cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919',
