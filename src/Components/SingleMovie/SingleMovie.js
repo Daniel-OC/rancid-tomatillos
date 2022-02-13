@@ -69,7 +69,7 @@ class SingleMovie extends React.Component {
             <h4 className='movie-title'>{this.state.currentMovie.title}</h4>
             <p className='tagline'>{this.state.currentMovie.tagline}</p>
             <div className='rating-container'>
-              <ReactStars className='star-rating' count={5} value={Number(this.state.currentMovie.average_rating)}  isHalf={true} size={22} activeColor={'#ffd700'} color={'#F2F2F2'} edit={false}/>
+              <ReactStars className='star-rating' count={5} value={Number(this.state.currentMovie.average_rating)}  isHalf={true} size={22} activeColor={'#ffd700'} color={'#fbfbfb45'} edit={false}/>
               <span className='rating'>{this.state.currentMovie.average_rating}</span>
             </div>
             <div className='genre-container'>
