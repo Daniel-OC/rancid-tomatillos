@@ -12,13 +12,13 @@
 
 .error-message {
   padding: 2%;
-  color: v.$darkBlue
+  color: v.$darkPurple;
 }
 
 .error-home-button {
-  border: 2px solid v.$darkBlue;
+  border: 2px solid v.$darkPurple;
   background-color: transparent;
-  color: v.$darkBlue;
+  color: v.$darkPurple;
   margin: 2% 0;
   padding: 1% 2%;
   font-size: 1.5em;
@@ -29,9 +29,9 @@
 
   &:hover {
     cursor: pointer;
-    background-color: v.$darkBlue;
+    background-color: v.$darkPurple;
     color: v.$offWhite;
-    border: 2px solid v.$darkBlue;
+    border: 2px solid v.$darkPurple;
     transition: all 0.44s ease-in-out;
   }
 }

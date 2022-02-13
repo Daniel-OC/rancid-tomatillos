@@ -2,8 +2,9 @@
 @use '../../styles/mixins' as m;
 
 .movie-container {
-  background-color: v.$darkBlue;
-  padding: 10% 0;
+  background-image: url('../AllMovies/purple-background.jpeg');
+  background-size: cover;
+  padding: 5% 0;
   overflow-y: auto;
   animation: fadeIn linear 2s;
   -webkit-animation: fadeIn linear 2s;
@@ -13,12 +14,12 @@
 }
 
 .movie-container > .movie-wrapper:nth-child(even) {
-  background-color: v.$lightBrown;
+  background-color: v.$deepPurple;
   direction: rtl;
 }
 
 .movie-container > .movie-wrapper:nth-child(even) > .description-container {
-  background-color: v.$lightBrown;
+  background-color: v.$darkPurple;
   direction: ltr;
 }
 
