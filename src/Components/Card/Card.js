@@ -4,6 +4,7 @@ import './Card.scss';
 import {Link} from 'react-router-dom';
 
 const Card = (props) => {
+  console.log(props)
   const averageRating = Number(props.average_rating);
 
   return (

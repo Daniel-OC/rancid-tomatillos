@@ -4,7 +4,6 @@ import Error from '../Error/Error';
 import './AllMovies.scss';
 
 const AllMovies = (props) => {
-  console.log(props)
   const movieCards = props.movies.map(movie => {
     return(
       <Card
@@ -19,10 +18,9 @@ const AllMovies = (props) => {
     )
   })
 
-
   return(
     !props.error?
-    <section className="movie-container">
+    <section className='movie-container'>
       {movieCards}
     </section>
     :
