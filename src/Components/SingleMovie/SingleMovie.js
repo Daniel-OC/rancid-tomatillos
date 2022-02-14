@@ -117,7 +117,7 @@ class SingleMovie extends React.Component {
             <p className='modal-text' tabIndex='0'>{this.state.currentMovie.overview}</p>
           </div>
           <div className='movie-details'>
-            <p className='modal-title' tabIndex='0'>Release Date: <span className='modal-text'>{this.state.currentMovie.release_date}</span></p>
+            <p className='modal-title' tabIndex='0'>Release Date: <span className='modal-text' tabIndex='0'>{this.state.currentMovie.release_date}</span></p>
             <p className='modal-title' tabIndex='0'>Budget: <span className='modal-text' tabIndex='0'>{this.state.currentMovie.budget}</span></p>
             <p className='modal-title' tabIndex='0'>Revenue: <span className='modal-text' tabIndex='0'>{this.state.currentMovie.revenue}</span></p>
             <p className='modal-title' tabIndex='0'>Runtime: <span className='modal-text' tabIndex='0'>{this.state.currentMovie.runtime} minutes</span></p>
