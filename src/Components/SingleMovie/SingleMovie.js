@@ -12,7 +12,7 @@ class SingleMovie extends React.Component {
         id: props.id,
         currentMovie: null,
         err: '',
-        setError: props.setError
+        setError: props.setError,
       }
   }
 
@@ -22,6 +22,9 @@ class SingleMovie extends React.Component {
       .then(data => this.setState({currentMovie: data.movie}))
       .then(() => {
         this.showBlur()
+      })
+      .then(() => {
+        this.makeModalTabbable()
       })
       .catch(error => this.state.setError(error))
   }
@@ -52,49 +55,49 @@ class SingleMovie extends React.Component {
     document.querySelector('body').classList.remove('blur')
   }
 
+  makeModalTabbable = () => {
+    const tabableElements = '[tabIndex]:not([tabIndex="-1"])';
+    const openModal = document.querySelector('#openModal');
+    
+    const firstModalTab = openModal.querySelectorAll(tabableElements)[0];
+    const modalContent = openModal.querySelectorAll(tabableElements);
+    console.log(modalContent)
+    const lastModalTab = modalContent[modalContent.length -1];
+
+    document.addEventListener('keydown', function(event){
+      let isTabPressed = event.key === 'Tab' || event.keyCode === 9;
+
+      if (!isTabPressed) {
+        return;
+      }
+
+      if (event.shiftKey) {
+        if (document.activeElement === firstModalTab) {
+          lastModalTab.focus();
+          event.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastModalTab) {
+          firstModalTab.focus();
+          event.preventDefault();
+        }
+      }
+    });
+
+    firstModalTab.focus();
+  }
+
 
   render() {
-    // const tabableElements = 'close-button, banner-image, movie-title, tagline, rating-container, genre, [tabIndex]:not([tabIndex="-1"])';
-    const openModal = document.querySelector('#modal');
-    
-    // const firstModalTab = document.querySelectorAll(tabableElements)[0];
-    // const modalContent = document.querySelectorAll(tabableElements);
-    // const lastModalTab = modalContent[modalContent.length -1];
-
-    const firstModalTab = document.querySelector('.close-button');
-    const lastModalTab = document.querySelector('.movie-details');    
-
-    // document.addEventListener('keydown', (event) => {
-    //   let isTabPressed = event.key === 'Tab' || event.keyCode === 9;
-
-    //   if (!isTabPressed) {
-    //     return;
-    //   }
-
-    //   if (event.shiftKey) {
-    //     if (document.activeElement === firstModalTab) {
-    //       lastModalTab.focus();
-    //       event.preventDefault();
-    //     }
-    //   } else {
-    //     if (document.activeElement === lastModalTab) {
-    //       firstModalTab.focus();
-    //       event.preventDefault();
-    //     }
-    //   }
-    // });
-
-    // firstModalTab.focus();
-
     return (
       <>
       {this.state.err && <Error />}
       {this.state.currentMovie && 
-      <div className='modal' id='openModal' tabIndex='-1' role='document'>
+      <div className='modal' id='openModal' tabIndex='-1'>
       <article className='modal-wrapper'>
         <section className='modal-top'>
           <span className='close-button'>
-            <Link to={'/'} tabIndex='0'>X</Link>
+            <Link to={'/'} className='link-home' tabIndex='0'>X</Link>
           </span>
           <div className='banner'>
             <img className='banner-image' src={this.state.currentMovie.backdrop_path} alt={`Scene from '${this.state.currentMovie.title}'`}/>

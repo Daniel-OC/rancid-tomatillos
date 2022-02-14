@@ -14,7 +14,7 @@ class App extends React.Component {
     this.state = {
       movies: [],
       currentMovie: null,
-      err: ''
+      err: '',
     }
   }
 
@@ -57,7 +57,7 @@ class App extends React.Component {
         <Header />
           <Route path='/' render={() => <AllMovies movies={this.state.movies} error={this.state.err} toggleButton={this.toggleButton}/>}/>
           <Route path='/:id' render={({match}) => {
-            return <SingleMovie id={match.params.id} setError={this.setError}/>
+            return <SingleMovie id={match.params.id} setError={this.setError} />
           }} />
         <Footer />
       </main>
