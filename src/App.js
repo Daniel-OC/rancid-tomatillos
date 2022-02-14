@@ -51,13 +51,47 @@ class App extends React.Component {
     descriptionContainers.forEach(container => container.classList.toggle('hide'));
   }
 
+  // makeModalTabbable = () => {
+  //   const tabableElements = '".close-button", ".banner-image", ".movie-title", ".tagline", ".rating-container", ".genre", [tabIndex]:not([tabIndex="-1"])';
+  //   const openModal = document.querySelector('#modal');
+    
+  //   const firstModalTab = document.querySelectorAll(tabableElements)[0];
+  //   const modalContent = document.querySelectorAll(tabableElements);
+  //   const lastModalTab = modalContent[modalContent.length -1];
+
+  //   // const firstModalTab = document.querySelector('.close-button');
+  //   // const lastModalTab = document.querySelector('.movie-details');    
+
+  //   document.addEventListener('keydown', (event) => {
+  //     let isTabPressed = event.key === 'Tab' || event.keyCode === 9;
+
+  //     if (!isTabPressed) {
+  //       return;
+  //     }
+
+  //     if (event.shiftKey) {
+  //       if (document.activeElement === firstModalTab) {
+  //         lastModalTab.focus();
+  //         event.preventDefault();
+  //       }
+  //     } else {
+  //       if (document.activeElement === lastModalTab) {
+  //         firstModalTab.focus();
+  //         event.preventDefault();
+  //       }
+  //     }
+  //   });
+
+  //   firstModalTab.focus();
+  // }
+
   render() {
     return (
         <main>
         <Header />
           <Route path='/' render={() => <AllMovies movies={this.state.movies} error={this.state.err} toggleButton={this.toggleButton}/>}/>
           <Route path='/:id' render={({match}) => {
-            return <SingleMovie id={match.params.id} setError={this.setError}/>
+            return <SingleMovie id={match.params.id} setError={this.setError} />
           }} />
         <Footer />
       </main>
