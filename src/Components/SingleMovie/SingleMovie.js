@@ -52,42 +52,75 @@ class SingleMovie extends React.Component {
     document.querySelector('body').classList.remove('blur')
   }
 
+
   render() {
+    // const tabableElements = 'close-button, banner-image, movie-title, tagline, rating-container, genre, [tabIndex]:not([tabIndex="-1"])';
+    const openModal = document.querySelector('#modal');
+    
+    // const firstModalTab = document.querySelectorAll(tabableElements)[0];
+    // const modalContent = document.querySelectorAll(tabableElements);
+    // const lastModalTab = modalContent[modalContent.length -1];
+
+    const firstModalTab = document.querySelector('.close-button');
+    const lastModalTab = document.querySelector('.movie-details');    
+
+    // document.addEventListener('keydown', (event) => {
+    //   let isTabPressed = event.key === 'Tab' || event.keyCode === 9;
+
+    //   if (!isTabPressed) {
+    //     return;
+    //   }
+
+    //   if (event.shiftKey) {
+    //     if (document.activeElement === firstModalTab) {
+    //       lastModalTab.focus();
+    //       event.preventDefault();
+    //     }
+    //   } else {
+    //     if (document.activeElement === lastModalTab) {
+    //       firstModalTab.focus();
+    //       event.preventDefault();
+    //     }
+    //   }
+    // });
+
+    // firstModalTab.focus();
+
     return (
       <>
       {this.state.err && <Error />}
       {this.state.currentMovie && 
-      <div className='modal'>
+      <div className='modal' id='openModal' tabIndex='-1' role='document'>
       <article className='modal-wrapper'>
         <section className='modal-top'>
           <span className='close-button'>
-            <Link to={'/'}>X</Link>
+            <Link to={'/'} tabIndex='0'>X</Link>
           </span>
           <div className='banner'>
-            <img className='banner-image' src={this.state.currentMovie.backdrop_path} alt={`Scene from '${this.state.currentMovie.title}'` }/>
+            <img className='banner-image' src={this.state.currentMovie.backdrop_path} alt={`Scene from '${this.state.currentMovie.title}'`}/>
           <div className='movie-info'>
-            <h4 className='movie-title'>{this.state.currentMovie.title}</h4>
-            <p className='tagline'>{this.state.currentMovie.tagline}</p>
-            <div className='rating-container'>
-              <ReactStars className='star-rating' count={5} value={Number(this.state.currentMovie.average_rating)}  isHalf={true} size={22} activeColor={'#ffd700'} color={'#F2F2F2'} edit={false}/>
+            <h2 className='movie-title' tabIndex='0'>{this.state.currentMovie.title} </h2>
+            <p className='tagline' tabIndex='0'>{this.state.currentMovie.tagline}</p>
+            <div className='rating-container' tabIndex='0'>
+              <ReactStars className='star-rating' count={5} value={Number(this.state.currentMovie.average_rating)}  isHalf={true} size={22} activeColor={'#ffd700'} color={'#fbfbfb45'} edit={false}/>
               <span className='rating'>{this.state.currentMovie.average_rating}</span>
             </div>
             <div className='genre-container'>
-            <p className='genres'>{this.state.currentMovie.genres}</p>
+              <p className='genres' tabIndex='0'>{this.state.currentMovie.genres}</p>
             </div>
           </div>
           </div>
         </section>
         <section className='modal-bottom'>
           <div className='movie-overview'>
-            <p className='modal-title'>Overview</p>
-            <p className='modal-text'>{this.state.currentMovie.overview}</p>
+            <p className='modal-title' tabIndex='0'>Overview</p>
+            <p className='modal-text' tabIndex='0'>{this.state.currentMovie.overview}</p>
           </div>
           <div className='movie-details'>
-            <p className='modal-title'>Release Date: <span className='modal-text'>{this.state.currentMovie.release_date}</span></p>
-            <p className='modal-title'>Budget: <span className='modal-text'>{this.state.currentMovie.budget}</span></p>
-            <p className='modal-title'>Revenue: <span className='modal-text'>{this.state.currentMovie.revenue}</span></p>
-            <p className='modal-title'>Runtime: <span className='modal-text'>{this.state.currentMovie.runtime} minutes</span></p>
+            <p className='modal-title' tabIndex='0'>Release Date: <span className='modal-text' tabIndex='0'>{this.state.currentMovie.release_date}</span></p>
+            <p className='modal-title' tabIndex='0'>Budget: <span className='modal-text' tabIndex='0'>{this.state.currentMovie.budget}</span></p>
+            <p className='modal-title' tabIndex='0'>Revenue: <span className='modal-text' tabIndex='0'>{this.state.currentMovie.revenue}</span></p>
+            <p className='modal-title' tabIndex='0'>Runtime: <span className='modal-text' tabIndex='0'>{this.state.currentMovie.runtime} minutes</span></p>
           </div>
         </section> 
       </article>

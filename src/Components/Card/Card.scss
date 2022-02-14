@@ -1,12 +1,10 @@
 @use '../../styles/variables' as v;
 @use '../../styles/mixins' as m;
 
-
 .movie-wrapper {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  background-color: v.$jeanBlue;
+  @include m.largeCardGrid();
   margin: 0% 10%;
+  box-shadow: 5px 3px 7px 2px black;
 
   &:hover {
     cursor: pointer;
@@ -18,22 +16,20 @@
   }
   
   .description-container {
-    background-color: v.$medBrown;
+    background-color: v.$deepPurple;
     padding: 5%;
   }
   
   .rating-container {
-    display: flex;
-    align-items: center;
+    @include m.flexbox(0,0,0,0,center);
   }
   
   .star-rating {
     margin: 0 1% 0 0;
-    // flex: 2;
   }
   
   h2 {
-    color: v.$darkBlue;
+    color: v.$offWhite;
     font-size: 2em;
     font-family: v.$titleFont;
   }
@@ -44,33 +40,34 @@
   }
   
   p {
-    color: v.$darkBlue;
+    color: v.$offWhite;
     font-size: 1.2em;
     margin-left: 1%;
   }
 
   .info-button {
-    border: 2px solid v.$darkBlue;
-    background-color: transparent;
-    color: v.$darkBlue;
-    margin: 2% 0;
-    padding: 1% 2%;
-    font-size: 1.2em;
-
+    @include m.button(v.$offWhite, transparent, v.$offWhite);
+  
     &:hover {
-      cursor: pointer;
-      background-color: v.$jeanBlue;
-      color: v.$offWhite;
-      border: 2px solid v.$jeanBlue;
-      transition: all 0.44s ease-in-out;
+      @include m.buttonHover(v.$offWhite, v.$offWhite, v.$darkPurple);
     }
   }
+}
+
+
+.no-columns {
+  grid-template-columns: none;
+  margin-bottom: 5%;
+}
+
+.hide {
+  display:none;
 }
 
 //Tablet portrait view
 @media (min-width: 768px) and (max-width: 1024px) {
   .movie-wrapper {
-    grid-template-columns: 40% 60%;
+    @include m.smallCardGrid();
 
     .info-button {
       margin: 5% 0;
@@ -81,16 +78,24 @@
       padding: 10%;
     }
   }
+
+  .hide {
+    display: inline;
+  }
 }
 
 //small mobile device view
 @media (min-width: 320px) and (max-width: 767px) {
   .movie-wrapper {
-    grid-template-columns: 40% 60%;
+    @include m.smallCardGrid();
     
     .info-button {
       margin: 5% 0;
       padding: 5% 10%;
     }
+  }
+
+  .no-columns {
+    grid-template-columns: none;
   }
 }

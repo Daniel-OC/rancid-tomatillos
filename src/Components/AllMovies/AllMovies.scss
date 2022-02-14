@@ -1,9 +1,23 @@
 @use '../../styles/variables' as v;
 @use '../../styles/mixins' as m;
 
+
+.view-controls {
+  @include m.flexbox(row, 0, 0, center, 0);
+}
+
+.toggle-button {
+  @include m.button(v.$offWhite, transparent, v.$offWhite);
+
+  &:hover {
+    @include m.buttonHover(v.$darkPurple, v.$offWhite, v.$darkPurple)
+  }
+}
+
 .movie-container {
-  background-color: v.$darkBlue;
-  padding: 10% 0;
+  background-image: url('../AllMovies/purple-background.jpeg');
+  background-size: cover;
+  padding: 2% 0;
   overflow-y: auto;
   animation: fadeIn linear 2s;
   -webkit-animation: fadeIn linear 2s;
@@ -12,19 +26,38 @@
   -ms-animation: fadeIn linear 2s;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 .movie-container > .movie-wrapper:nth-child(even) {
-  background-color: v.$lightBrown;
+  background-color: v.$deepPurple;
   direction: rtl;
 }
 
 .movie-container > .movie-wrapper:nth-child(even) > .description-container {
-  background-color: v.$lightBrown;
+  background-color: v.$darkPurple;
   direction: ltr;
 }
 
 .movie-container.blur {
  filter: blur(10px);
  pointer-events: none;
+}
+
+//Tablet portrait view
+@media (min-width: 768px) and (max-width: 1024px) {
+ .grid {
+   grid-template-columns: 1fr 1fr;
+ }
+}
+
+//small mobile device view
+@media (min-width: 320px) and (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @keyframes fadeIn {
