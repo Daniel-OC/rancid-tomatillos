@@ -61,7 +61,6 @@ class SingleMovie extends React.Component {
     
     const firstModalTab = openModal.querySelectorAll(tabableElements)[0];
     const modalContent = openModal.querySelectorAll(tabableElements);
-    console.log(modalContent)
     const lastModalTab = modalContent[modalContent.length -1];
 
     document.addEventListener('keydown', function(event){
