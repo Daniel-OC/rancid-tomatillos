@@ -2,7 +2,8 @@
 @use '../../styles/mixins' as m;
 
 footer {
-  background-color: v.$darkPurple;
+  background-color: v.$deepPurple;
+  border-top: 1px solid v.$darkPurple;
 }
 
 .footer-content {
@@ -16,6 +17,11 @@ footer {
   margin: 2%;
 }
 
+.logos {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 h3 {
   font-family: v.$titleFont;
   font-size: 1.5em;
@@ -23,6 +29,7 @@ h3 {
 }
 
 h4 {
+  font-size: 1.5em;
   font-family: v.$titleFont;
 }
 
@@ -32,7 +39,7 @@ h4 {
 }
 
 .repo, .github, .linkedin {
-  margin: 2%;
+  margin: 4% 1%;
 }
 
 a {

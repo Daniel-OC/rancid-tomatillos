@@ -1,10 +1,33 @@
 @use '../../styles/variables' as v;
 @use '../../styles/mixins' as m;
 
+
+.view-controls {
+  display: flex;
+  justify-content: center
+}
+
+.toggle-button {
+  border: 2px solid v.$offWhite;
+  background-color: transparent;
+  color: v.$offWhite;
+  margin: 2% 0;
+  padding: 1% 2%;
+  font-size: 1.2em;
+
+  &:hover {
+    cursor: pointer;
+    background-color: v.$offWhite;
+    color: v.$darkPurple;
+    border: 2px solid v.$offWhite;
+    transition: all 0.44s ease-in-out;
+  }
+}
+
 .movie-container {
   background-image: url('../AllMovies/purple-background.jpeg');
   background-size: cover;
-  padding: 5% 0;
+  padding: 2% 0;
   overflow-y: auto;
   animation: fadeIn linear 2s;
   -webkit-animation: fadeIn linear 2s;
@@ -31,6 +54,20 @@
 .movie-container.blur {
  filter: blur(10px);
  pointer-events: none;
+}
+
+//Tablet portrait view
+@media (min-width: 768px) and (max-width: 1024px) {
+ .grid {
+   grid-template-columns: 1fr 1fr;
+ }
+}
+
+//small mobile device view
+@media (min-width: 320px) and (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @keyframes fadeIn {

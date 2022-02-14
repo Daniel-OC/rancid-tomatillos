@@ -1,5 +1,7 @@
 import React from 'react';
 import './Footer.scss'
+import react_logo from './react_logo.png';
+import turing_logo from './turing_logo.png';
 
 const Footer = () => {
   return (
@@ -8,6 +10,10 @@ const Footer = () => {
         <section className='project-description'>
           <h3>About</h3>
             <p>This is a Turing Module 3 project built with React.js. It was designed and developed by Jani Palomino and Daniel O'Connell.</p>
+        <div className='logos'>
+          <img src={react_logo} alt='react logo'/>
+          <img src={turing_logo} alt='turing logo'/>
+        </div>
         </section>
         <div className='social-links'>
           <h3>Follow Us</h3>

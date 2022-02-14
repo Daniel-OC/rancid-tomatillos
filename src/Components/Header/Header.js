@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
       <section className='logo'>
-        <h1 onClick={() => {window.location.href='/'}}>Palomino + O'Connell | Fine Film Critics</h1>
+        <h1 tabIndex='0' onClick={() => {window.location.href='/'}}>Palomino + O'Connell | Fine Film Critics</h1>
       </section>
     </header>
   );

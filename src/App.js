@@ -42,13 +42,10 @@ class App extends React.Component {
     const movieContainer = document.querySelector('.movie-container');
     const movieWrappers = document.querySelectorAll('.movie-wrapper');
     const descriptionContainers = document.querySelectorAll('.description-container');
-    const toggleButton = document.querySelector('#toggleButton');
+    const toggleButton = document.querySelector('.toggle-button');
 
-    if (toggleButton.innerText === "Grid View") {
-      toggleButton.innerText = "List View"
-    } else {
-      toggleButton.innerText = "Grid View"
-    }
+    toggleButton.innerText === "Grid View" ? toggleButton.innerText = "List View" : toggleButton.innerText = "Grid View"
+    
     movieContainer.classList.toggle('grid');
     movieWrappers.forEach(wrapper => wrapper.classList.toggle('no-columns'));
     descriptionContainers.forEach(container => container.classList.toggle('hide'));

@@ -21,8 +21,8 @@ const AllMovies = (props) => {
   return(
     !props.error?
     <section className='all-movie-view'>
-      <div className='toggle-buttons'>
-      <button className='info-button' id='toggleButton' onClick={() => {props.toggleButton()}}>Grid View</button>
+      <div className='view-controls'>
+      <button className='toggle-button' title='Switch Views' onClick={() => {props.toggleButton()}}>Grid View</button>
       </div>
       <section className='movie-container'>
         {movieCards}

@@ -1,11 +1,6 @@
 @use '../../styles/variables' as v;
 @use '../../styles/mixins' as m;
 
-.toggle-buttons {
-  display: flex;
-  justify-content: center
-}
-
 .movie-wrapper {
   display: grid;
   grid-template-columns: 20% 80%;
@@ -52,24 +47,24 @@
     margin-left: 1%;
   }
 
-}
-
-.info-button {
-  border: 2px solid v.$offWhite;
-  background-color: transparent;
-  color: v.$offWhite;
-  margin: 2% 0;
-  padding: 1% 2%;
-  font-size: 1.2em;
-
-  &:hover {
-    cursor: pointer;
-    background-color: v.$offWhite;
-    color: v.$darkPurple;
+  .info-button {
     border: 2px solid v.$offWhite;
-    transition: all 0.44s ease-in-out;
+    background-color: transparent;
+    color: v.$offWhite;
+    margin: 2% 0;
+    padding: 1% 2%;
+    font-size: 1.2em;
+  
+    &:hover {
+      cursor: pointer;
+      background-color: v.$offWhite;
+      color: v.$darkPurple;
+      border: 2px solid v.$offWhite;
+      transition: all 0.44s ease-in-out;
+    }
   }
 }
+
 
 .no-columns {
   grid-template-columns: none;
@@ -94,6 +89,10 @@
       padding: 10%;
     }
   }
+
+  .hide {
+    display: inline;
+  }
 }
 
 //small mobile device view
@@ -105,5 +104,9 @@
       margin: 5% 0;
       padding: 5% 10%;
     }
+  }
+
+  .no-columns {
+    grid-template-columns: none;
   }
 }

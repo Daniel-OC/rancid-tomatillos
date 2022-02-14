@@ -7,27 +7,15 @@ const Card = (props) => {
   const averageRating = Number(props.average_rating);
 
   return (
-      // <Link to={`/${props.id}`} className='movie-wrapper'>
-      //     <img className='thumbnail' src={props.poster_path} alt={`"${props.title}" poster`}/>
-      //     <div className='description-container'>
-      //       <h2>{props.title}</h2>
-      //       <div className='rating-container'>
-      //         <ReactStars className='star-rating' count={5} value={averageRating} isHalf={true} size={22} activeColor={'#ffd700'} color={'#fbfbfb45'} edit={false} />
-      //         <p>{props.average_rating}</p>
-      //       </div>
-      //       <button className='info-button'>More Info</button>
-      //     </div>
-      // </Link>
-
-      <Link to={`/${props.id}`} className='movie-wrapper'>
+      <Link to={`/${props.id}`} className='movie-wrapper' data-toggle='modal' data-target='#openModal'>
       <img className='thumbnail' src={props.poster_path} alt={`"${props.title}" poster`}/>
       <div className='description-container'>
-        <h2>{props.title}</h2>
-        <div className='rating-container'>
-          <ReactStars className='star-rating' count={5} value={averageRating} isHalf={true} size={22} activeColor={'#ffd700'} color={'#fbfbfb45'} edit={false} />
+        <h2 tabIndex='0'>{props.title}</h2>
+        <div className='rating-container' tabIndex='0'>
+          <ReactStars className='star-rating' count={5} value={averageRating} isHalf={true} size={22} activeColor={'#ffd700'} color={'#fbfbfb45'} edit={false} area-hidden='true'/>
           <p>{props.average_rating}</p>
         </div>
-        <button className='info-button'>More Info</button>
+        <button className='info-button' title={`'More info about ${props.title}'`}>More Info</button>
       </div>
       </Link>
   )
