@@ -10,47 +10,47 @@ footer {
   display: flex;
   line-height: 1.5em;
   font-size: 0.9em;
-}
-
-.project-description {
-  flex: 2;
-  margin: 2%;
-}
-
-.logos {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-h3 {
-  font-family: v.$titleFont;
-  font-size: 1.5em;
-  text-shadow: 1px 1px 1px black;
-}
-
-h4 {
-  font-size: 1.5em;
-  font-family: v.$titleFont;
-}
-
-.social-links {
-  flex: 2;
-  margin: 2%;
-}
-
-.repo, .github, .linkedin {
-  margin: 4% 1%;
-}
-
-a {
-  text-decoration: none;
-  padding: 0 1%;
-  font-size: 90%;
-
-  &:hover {
-    text-decoration: underline;
+  
+  .project-description {
+    flex: 2;
+    margin: 2%;
+  }
+  
+  .logos {
+    @include m.flexbox(0,0,0,space-evenly,0);
+  }
+  
+  h3 {
+    font-family: v.$titleFont;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 1px black;
+  }
+  
+  h4 {
+    font-size: 1.5em;
+    font-family: v.$titleFont;
+  }
+  
+  .social-links {
+    flex: 2;
+    margin: 2%;
+  }
+  
+  .repo, .github, .linkedin {
+    margin: 4% 1%;
+  }
+  
+  a {
+    text-decoration: none;
+    padding: 0 1%;
+    font-size: 90%;
+  
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
+
 
 .copyright {
   background-color: v.$darkPurple;

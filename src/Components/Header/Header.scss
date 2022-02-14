@@ -3,24 +3,23 @@
 
 header {
   background-color: v.$darkPurple;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  flex: 3;
-}
-
-h1 {
-  font-size: 3em;
-  font-family: v.$titleFont;
-  padding: 2%;
-
-  &:hover {
-    cursor: pointer;
+  @include m.flexbox(0,0,0,space-between,center);
+  
+  .logo {
+    flex: 3;
+  }
+  
+  h1 {
+    font-size: 3em;
+    font-family: v.$titleFont;
+    padding: 2%;
+  
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
+
 
 //Tablet portrait view
 @media (min-width: 768px) and (max-width: 1024px) {
