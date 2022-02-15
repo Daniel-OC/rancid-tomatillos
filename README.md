@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Overview
+This is a two week Turing Module 3 project built with React.js. This web app allows users to view movie reviews, plots, and release details.
 
-## Available Scripts
+It was designed and developed by [Daniel O'Connell](https://github.com/Daniel-OC) and [Jani Palomino](https://github.com/janitastic).
 
-In the project directory, you can run:
+## Demo
 
-### `npm start`
+### Check it out at [daniel-oc.github.io/rancid-tomatillos/](https://daniel-oc.github.io/rancid-tomatillos/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Custom URLs for each Movie
 
-### `npm test`
+![Movie URLs](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link/docs/modal-url.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Fully Mobile Responsive & Toggle Between List or Grid View
 
-### `npm run build`
+![Mobile Responsive](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link/docs/mobile-responsive.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 100% Lighthouse Accessibility Score
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![List-Lighthouse-Score](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link/docs/list-lighthouse.png)
+![Modal-Lighthouse-Score](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link/docs/modal-lighthouse.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Fully Tabable for Accessibility
 
-### `npm run eject`
+![List-Tabbing](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link/docs/list-tabbing.gif)
+![Modal-Tabbing](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link/docs/modal-tabbing.gif)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Goals
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Gain competency with React fundamentals.
+- Test React components & asynchronous JS.
+- Create a multi-page UX using Router.
+- Create a fully accessible and mobile responsive application.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Technologies Used
+- React
+- Router
+- Cypress
+- JavaScript
+- HTML
+- CSS/SASS
+- Git
+- Figma
+- Webpack
+- Fetch API
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Install & Setup
+1. Clone this repo `git clone git@github.com:Daniel-OC/rancid-tomatillos.git`
+2. Install the necessary package dependencies `npm install`
+3. Run the command `npm start`
+4. Start the server at `http://localhost:3000/`
 
-## Learn More
+### Future Enhancements
+- Allow users to:
+  - submit their own movie ratings.
+  - filter movies by genre, name, or ratings.
+  - search for movies.
+  - login and select their favorites.
+- Improve accessibility for keyboard users.
+- Add a nav bar with more pages of content related to movies.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Project Spec & Rubric
+[Turing Schoold of Software & Design - Rancid Tomatillos Project Spec](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Contributors
+- Developers [Daniel O'Connell](https://github.com/Daniel-OC) and [Jani Palomino](https://github.com/janitastic).
+- With review by [Mike Limberg](https://github.com/mlimberg) and [Rachel Williams](https://github.com/rwilliams659).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Contact Us on LinkedIn
+- Daniel O'Connell [@daniel-o-connell-maker](https://www.linkedin.com/in/daniel-o-connell-maker/)
+- Jani Palomino [@janipalomino](https://www.linkedin.com/in/janipalomino/)
