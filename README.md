@@ -1,16 +1,16 @@
 # Rancid Tomatillos
 
 ### Contents
- - [Overview](https://github.com/Daniel-OC/rancid-tomatillos#overview)
- - [Live View](https://github.com/Daniel-OC/rancid-tomatillos#demo)
- - [Features](https://github.com/Daniel-OC/rancid-tomatillos#fully-mobile-responsive)
- - [Goals](https://github.com/Daniel-OC/rancid-tomatillos#goals)
- - [Technologies Used](https://github.com/Daniel-OC/rancid-tomatillos#technologies-used)
- - [Install & Setup](https://github.com/Daniel-OC/rancid-tomatillos#install-&-setup)
- - [Wins & Challenges](https://github.com/Daniel-OC/rancid-tomatillos#wins-&-challenges)
- - [Future Enhancements](https://github.com/Daniel-OC/rancid-tomatillos#future-enhancements)
- - [Project Spec & Rubric](https://github.com/Daniel-OC/rancid-tomatillos#project-spec-&-rubric)
- - [Contributors](https://github.com/Daniel-OC/rancid-tomatillos#contributors)
+ - [Overview](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link#overview)
+ - [Live View](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link#demo)
+ - [Features](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link#fully-mobile-responsive)
+ - [Goals](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link#goals)
+ - [Technologies Used](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link#technologies-used)
+ - [Install & Setup](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link#install-&-setup)
+ - [Wins & Challenges](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link#wins-&-challenges)
+ - [Future Enhancements](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link#future-enhancements)
+ - [Project Spec & Rubric](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link#project-spec-&-rubric)
+ - [Contributors](https://github.com/Daniel-OC/rancid-tomatillos/blob/refactor/deployment-link#contributors)
 
 ### Overview
 This is a two week Turing Module 3 project built with React.js. This web app allows users to view movie reviews, plots, and release details.
