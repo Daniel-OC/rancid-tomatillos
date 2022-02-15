@@ -1,17 +1,5 @@
 # Rancid Tomatillos
 
-### Contents
- - [Overview](https://github.com/Daniel-OC/rancid-tomatillos/refactor/deployment-link#overview)
- - [Live View](https://github.com/Daniel-OC/rancid-tomatillos/refactor/deployment-link#demo)
- - [Features](https://github.com/Daniel-OC/rancid-tomatillos/refactor/deployment-link#fully-mobile-responsive)
- - [Goals](https://github.com/Daniel-OC/rancid-tomatillos/refactor/deployment-link#goals)
- - [Technologies Used](https://github.com/Daniel-OC/rancid-tomatillos/refactor/deployment-link#technologies-used)
- - [Install & Setup](https://github.com/Daniel-OC/rancid-tomatillos/refactor/deployment-link#install-&-setup)
- - [Wins & Challenges](https://github.com/Daniel-OC/rancid-tomatillos/refactor/deployment-link#wins-&-challenges)
- - [Future Enhancements](https://github.com/Daniel-OC/rancid-tomatillos/refactor/deployment-link#future-enhancements)
- - [Project Spec & Rubric](https://github.com/Daniel-OC/rancid-tomatillos/refactor/deployment-link#project-spec-&-rubric)
- - [Contributors](https://github.com/Daniel-OC/rancid-tomatillos/refactor/deployment-link#contributors)
-
 ### Overview
 This is a two week Turing Module 3 project built with React.js. This web app allows users to view movie reviews, plots, and release details.
 
@@ -66,12 +54,14 @@ It was designed and developed by [Daniel O'Connell](https://github.com/Daniel-OC
 3. Run the command `npm start`
 4. Start the server at `http://localhost:3000/`
 
-### Wins & Challenges
-
 ### Future Enhancements
-- Allow users to submit their own movie ratings
-- Allow users to filter movies by genre, name, or ratings.
-- Allow users to login and select their favorites.
+- Allow users to:
+  - submit their own movie ratings.
+  - filter movies by genre, name, or ratings.
+  - search for movies.
+  - login and select their favorites.
+- Improve accessibility for keyboard users.
+- Add a nav bar with more pages of content related to movies.
 
 ### Project Spec & Rubric
 [Turing Schoold of Software & Design - Rancid Tomatillos Project Spec](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
