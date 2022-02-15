@@ -2,7 +2,7 @@ import React from 'react';
 import '../SingleMovie/SingleMovie.scss';
 import ReactStars from 'react-rating-stars-component';
 import { Link } from 'react-router-dom';
-import {getSingleMovie} from '../../apiCalls'
+import {getSingleMovie} from '../../apiCalls';
 import Error from '../Error/Error';
 
 class SingleMovie extends React.Component {
