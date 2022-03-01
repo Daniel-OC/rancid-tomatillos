@@ -76,7 +76,7 @@ It was designed and developed by [Daniel O'Connell](https://github.com/Daniel-OC
 - Add a nav bar with more pages of content related to movies.
 
 ### Project Spec & Rubric
-[Turing Schoold of Software & Design - Rancid Tomatillos Project Spec](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
+[Turing School of Software & Design - Rancid Tomatillos Project Spec](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
 
 ### Contributors
 - Developers [Daniel O'Connell](https://github.com/Daniel-OC) and [Jani Palomino](https://github.com/janitastic).
